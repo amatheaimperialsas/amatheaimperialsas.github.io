@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    background-image: url('fondo\ 2.1.jpg'); /* Reemplaza 'tu_imagen.jpg' con el nombre de tu archivo de imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-attachment: fixed; /* Fija la imagen al hacer scroll (opcional) */
+    
+}
+
+/* Header */
+header {
+    background-color: #0a2647;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+   
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    
+}
+
+.navbar a:hover {
+    color: #ffd700;
+}
+
+/* Menú hamburguesa */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background: #0a2647;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        text-align: right;
+        padding: 1rem;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+}
+
+/* Secciones */
+.seccion {
+    font-size: larger;
+    padding: 2rem;
+    text-align:justify;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    
+}
+
+.piso {
+    background: white;
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 8px;
+    max-width: 700px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.foto-piso {
+    background: #ddd;
+    width: fit-content;
+    height:fit-content;
+    margin: 1rem 0;
+    object-fit: contain;
+}
+
+/* Galería */
+.galeria {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.galeria img {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Contacto */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    gap: 0.5rem;
+}
+
+input, textarea {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font: justify;
+    
+}
+
+.boton-azul {
+    background-color: #007bff; /* Color azul */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none; /* Elimina el subrayado */
+    border-radius: 5px;
+    display: inline-block; /* Necesario para aplicar padding y margen */
+    margin: 5px;
+   
+  }
+  .boton-rojo {
+    background-color: #dc3545; /* Color rojo */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none; /* Elimina el subrayado */
+    border-radius: 5px;
+    display: inline-block; /* Necesario para aplicar padding y margen */
+    margin: 5px;
+   
+  }
+  
+  /* Opcional: para cambiar el color al pasar el ratón (hover) */
+  .boton-azul:hover {
+    background-color: #0056b3;
+  }
+  
+  .boton-rojo:hover {
+    background-color: #c82333;
+  }
+/* Footer */
+footer {
+    background: #0a2647;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+h2 , h3 ,div {
+    text-align: center;
+    image-rendering:optimizeQuality;
+}
+.collage-container {
+    display: grid; /* o display: flex; flex-wrap: wrap; */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ejemplo de grid responsivo */
+    gap: 10px; /* Espacio entre imágenes */
+    padding: 10px;
+}
+.galeria-collage img {
+    width: 300px; /* Ancho de cada imagen */
+    height: 200px; /* Alto de cada imagen */
+    border: 5px solid white; /* Borde blanco */
+    box-shadow: 2px 2px 5px grey; /* Sombra */
+    transform:matrix3d()/* Rota la imagen 10 grados */
+}
