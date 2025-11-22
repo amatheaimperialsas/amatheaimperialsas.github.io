@@ -1,7 +1,9 @@
 /* ===========================
-   REINICIO BÁSICO
+   RESETEO BÁSICO
    =========================== */
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,18 +14,19 @@
    =========================== */
 body {
     font-family: "Poppins", sans-serif;
-    background-color: #f8f8f8;
-    color: #111; /* texto un poco más oscuro para que se lea mejor */
-    
-    /* Fondo original con tu imagen */
-    background-image: url('fondo.png');
-    background-repeat: no-repeat;
+    color: #111; /* texto oscuro y legible */
+
+    /* Fondo con tu imagen + ligera capa clara para legibilidad */
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, 0.7),
+            rgba(255, 255, 255, 0.7)
+        ),
+        url("fondo.png") center center fixed no-repeat;
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
 }
 
-/* Imágenes adaptables */
+/* Todas las imágenes adaptables */
 img {
     max-width: 100%;
     height: auto;
@@ -40,6 +43,9 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo h1 {
@@ -47,7 +53,7 @@ header {
     margin: 0;
 }
 
-/* Lista de navegación */
+/* Navegación */
 .navbar .nav-list {
     list-style: none;
     display: flex;
@@ -75,23 +81,30 @@ header {
    SECCIONES GENERALES
    =========================== */
 .seccion {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
     font-size: 1rem;
-    padding: 2rem;
     text-align: justify;
     font-family: 'Lucida Sans', 'Lucida Sans Regular',
         'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    max-width: 1100px;
-    margin: 0 auto;
 }
 
-/* Tarjetas de apartamentos / bloques de contenido */
+/* Títulos dentro de secciones */
+.seccion h2,
+.seccion h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Tarjetas de apartamentos / bloques */
 .piso {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.92);
     margin: 1rem auto;
     padding: 1.2rem;
     border-radius: 8px;
     max-width: 700px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.12);
 }
 
 /* Imagen principal de cada piso */
@@ -120,7 +133,7 @@ header {
     border-radius: 8px;
 }
 
-/* Collage (si lo usas) */
+/* Collage si lo usas */
 .collage-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -142,7 +155,7 @@ form {
     display: flex;
     flex-direction: column;
     max-width: 400px;
-    margin: auto;
+    margin: 1.5rem auto;
     gap: 0.5rem;
 }
 
@@ -154,10 +167,11 @@ textarea {
     font-size: 1rem;
 }
 
-/* Botones personalizados */
-.boton-azul {
-    background-color: #007bff;
-    color: #fff;
+/* ===========================
+   BOTONES
+   =========================== */
+.boton-azul,
+.boton-rojo {
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
@@ -165,18 +179,18 @@ textarea {
     margin: 5px;
     border: none;
     cursor: pointer;
+    font-weight: 500;
+    text-align: center;
+}
+
+.boton-azul {
+    background-color: #007bff;
+    color: #fff;
 }
 
 .boton-rojo {
     background-color: #dc3545;
     color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-    margin: 5px;
-    border: none;
-    cursor: pointer;
 }
 
 .boton-azul:hover {
@@ -196,23 +210,6 @@ footer {
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
-}
-
-/* Encabezados centrados dentro de secciones */
-.seccion h2,
-.seccion h3 {
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-/* ===========================
-   IMÁGENES GENERALES
-   =========================== */
-/* Para que ninguna imagen se salga en móvil */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
 }
 
 /* ===========================
@@ -247,7 +244,7 @@ img {
     }
 
     .seccion {
-        padding: 1.2rem;
+        padding: 1.2rem 1rem;
         font-size: 0.95rem;
     }
 
@@ -265,40 +262,7 @@ img {
     .galeria img {
         width: 100%;
         height: auto;
-    }
-
-    .boton-azul,
-    .boton-rojo {
-        display: block;
-        width: 100%;
-        text-align: center;
-        box-sizing: border-box;
-    }
-}
-
-/* Ajustes básicos para pantallas pequeñas */
-@media (max-width: 768px) {
-
-    .seccion {
-        padding: 1rem;
-        font-size: 0.95rem;
-    }
-
-    .piso {
-        max-width: 100%;
-        margin: 1rem 0;
-        padding: 1rem;
-    }
-
-    .galeria {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .galeria img {
-        width: 100%;
-        height: auto;
-        max-width: 400px; /* para que no se vea gigantesca */
+        max-width: 400px;
     }
 
     form {
@@ -310,9 +274,6 @@ img {
     .boton-azul,
     .boton-rojo {
         width: 100%;
-        text-align: center;
         box-sizing: border-box;
     }
 }
-
-
