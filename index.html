@@ -135,16 +135,26 @@
 
            <h3>Nos encontramos en la Urbanización Privada El Sol, Machala - Ecuador.</h3>
 
-<div class="mapa">
+<div class="mapa" style="position: relative; cursor: pointer;">
+    
+    <!-- Capa clicable encima del mapa -->
+    <a 
+        href="https://www.google.com/maps/dir/?api=1&destination=-3.267086694624063,-79.92287762699073" 
+        target="_blank" 
+        style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:10;">
+    </a>
+
+    <!-- Mapa visible debajo -->
+    
     <iframe 
         src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d995.8334363985587!2d-79.92287762699073!3d-3.267086694624063!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1761325730839!5m2!1ses!2ses" 
         width="100%" 
         height="450" 
         style="border-radius:10px; border:0;" 
         allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
+        loading="lazy">
     </iframe>
+
 </div>
 
                         
@@ -183,6 +193,7 @@
 </body>
 
 </html>
+
 
 
 
