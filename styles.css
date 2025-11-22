@@ -4,18 +4,15 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: "Poppins", sans-serif;
-    color: #333;
-
-    /* Fondo elegante luminoso que cubre toda la pantalla */
-    background: linear-gradient(
-        rgba(255,255,255,0.65),
-        rgba(255,255,255,0.65)
-    ),
-    url('fondo.png') no-repeat center center fixed;
-
-    background-size: cover; /* La imagen cubre toda la pantalla */
+cuerpo{
+    familia de fuentes:"Poppins", sans-serif;
+    color de fondo:#f8f8f8;
+    color:#333;
+    imagen de fondo: URL('fondo.png');
+    repetición de fondo: sin repetición;
+    tamaño de fondo: cubrir;
+    posición de fondo: centro;
+    fondo adjunto: fijado;
 }
 
 /* Header */
@@ -192,6 +189,7 @@ h2 , h3 ,div {
     box-shadow: 2px 2px 5px grey; /* Sombra */
     transform:matrix3d()/* Rota la imagen 10 grados */
 }
+
 
 
 
