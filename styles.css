@@ -11,18 +11,16 @@
    BODY / FONDO
    =========================== */
 body {
-    margin: 0;
     font-family: "Poppins", sans-serif;
-    color: #111; /* Texto oscuro, más legible */
-
-    /* Fondo elegante con velo blanco para mejorar la lectura */
-    background:
-        linear-gradient(
-            rgba(255, 255, 255, 0.78),
-            rgba(255, 255, 255, 0.78)
-        ),
-        url("fondo.png") center center fixed no-repeat;
+    background-color: #f8f8f8;
+    color: #111; /* texto un poco más oscuro para que se lea mejor */
+    
+    /* Fondo original con tu imagen */
+    background-image: url('fondo.png');
+    background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 /* ===========================
@@ -270,3 +268,4 @@ img {
         box-sizing: border-box;
     }
 }
+
