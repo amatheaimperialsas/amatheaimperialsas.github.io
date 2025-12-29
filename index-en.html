@@ -1,148 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amathea Imperial S.A.S</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amathea Imperial S.A.S</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>Amathea Imperial</h1>
+  <header>
+    <div class="logo">
+      <h1>Amathea Imperial</h1>
+    </div>
+
+    <!-- Menú de navegación -->
+    <nav class="navbar">
+      <div class="menu-toggle" id="mobile-menu">☰</div>
+      <ul class="nav-list">
+        <li><a href="#inicio">Home</a></li>
+        <li><a href="#quienes-somos">About Us</a></li>
+        <li><a href="#fotos">Photos</a></li>
+        <li><a href="#ubicacion">Location</a></li>
+        <li><a href="#contacto">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Selector de idioma -->
+    <div style="position: absolute; top: 10px; right: 20px;">
+      <select onchange="location = this.value;" style="padding: 8px; border-radius: 5px;">
+        <option value="index-en.html" selected>🇬🇧 English</option>
+        <option value="index.html">🌐 Español</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="seccion">
+      <h2>Welcome to Amathea Imperial</h2>
+      <h3>Rent one of our exclusive apartments and enjoy maximum comfort and security.</h3>
+    </section>
+
+    <section id="pisos" class="seccion">
+      <h2>Amathea Imperial S.A.S</h2>
+      <div class="piso" style="background: none; padding: 0; width: fit-content; margin: 0 auto;">
+        <img src="tarjeta%20de%20presentacion%20amathea%20frontal.png" width="200" alt="Amathea Imperial Logo" />
+      </div>
+    </section>
+
+    <section id="quienes-somos" class="seccion">
+      <h2>About Us</h2>
+      <p>
+        AMATHEA IMPERIAL S.A.S. is a company dedicated to offering short-stay accommodation services with the highest standards of quality, attention, and professionalism. 
+        <br><br>
+        We have two luxury apartments, completely new, furnished, and equipped to meet the needs of those seeking comfort, privacy, and style during their stay. 
+        <br><br>
+        We are known for our kindness, discretion, and commitment to our guests. Our goal is to make every visit a pleasant and memorable experience, offering ideal environments for rest, work, or tourism.
+        <br><br>
+        We believe hospitality is an art, and that is why we work every day to make every person who chooses us feel welcome, cared for, and valued.
+      </p>
+    </section>
+
+    <section id="pisos" class="seccion">
+      <h2>Our Apartments</h2>
+
+      <div class="piso">
+        <h3>Apartment A</h3>
+        <div class="foto-piso">
+          <img src="foto `piso A.jpg" width="680" height="400" alt="Apartment A" />
         </div>
-        <nav class="navbar">
-            <div class="menu-toggle" id="mobile-menu">
-                ☰
-            </div>
-            <ul class="nav-list">
-                <li><a href="#inicio">Home</a></li>
-                <li><a href="#quienes-somos">About Us</a></li>
-                <li><a href="#fotos">Photos</a></li>
-                <li><a href="#ubicacion">Location</a></li>
-                <li><a href="#contacto">Contact</a></li>
-            </ul>
-            <select onchange="location = this.value;" style="margin-left: 1rem;">
-                <option value="index.html">Español</option>
-                <option value="index-en.html" selected>English</option>
-            </select>
-        </nav>
-        
-        <div style="position: absolute; top: 10px; right: 20px;">
-  <select onchange="location = this.value;" style="padding: 8px; border-radius: 5px;">
-    <option value="index-en.html">🇬🇧 English</option>
-    <option value="index.html">🌐 Español</option>
-  </select>
-            
-</div>
+        <p class="descripcion">Apartment with two bedrooms, a double bed, a two-seater sofa bed, two bathrooms, and capacity for 5 people.</p>
+        <a href="http://airbnb.com/h/amatheaimperialsasapartamentoa" class="boton-rojo">Book via Airbnb</a><br>
+        <a href="https://www.booking.com/hotel/ec/amathea-imperial.es.html" class="boton-azul">Book via Booking</a>
+      </div>
 
-    </header>
-
-    <main>
-        <section id="inicio" class="seccion">
-            <h2>Welcome to Amathea Imperial</h2>
-            <br>
-            <h3>Rent one of our exclusive apartments and enjoy maximum comfort and security.</h3>
-
-        <section id="pisos" class="seccion">
-            <h2>Amathea Imperial S.A.S</h2>
-            <div class="piso" style="background: none; padding: 0; width: fit-content; margin: 0 auto;">
-                <img src="tarjeta%20de%20presentacion%20amathea%20frontal.png" width="200" alt="Amathea Imperial Logo">
-            </div>
-        </section>
-
-        <section id="quienes-somos" class="seccion">
-            <h2>About Us</h2>
-            <br>
-            <p>AMATHEA IMPERIAL S.A.S. is a company dedicated to offering short-stay accommodation services with the highest standards of quality, attention, and professionalism. We were born with the vision of providing each guest with an experience that combines the comfort of home with the excellence of personalized hotel service.
-
-                We have two luxury apartments, completely new, furnished, and equipped to meet the needs of those seeking comfort, privacy, and style during their stay. Each space has been carefully designed with attention to detail, prioritizing elegance, functionality, and security.
-
-                At AMATHEA IMPERIAL S.A.S., we are known for our kindness, discretion, and commitment to our guests. Our goal is to ensure that each visit is a pleasant, comfortable, and memorable experience, offering ideal environments for rest, work, or tourism.
-
-                We believe hospitality is an art, and that is why we work every day to make every person who chooses us feel welcome, cared for, and valued.</p>
-        </section>
-
-        <section id="pisos" class="seccion">
-            <h2>Our Apartments</h2>
-
-            <div class="piso">
-                <h3>Apartment A</h3>
-                <div class="foto-piso"><img src="foto `piso A.jpg" width="680" height="400"></div>
-                <p class="descripción">Apartment with two bedrooms, a double bed, and a 2-seater sofa bed, 2 bathrooms, and capacity for 5 people.</p>
-                <br>
-                <a href="http://airbnb.com/h/amatheaimperialsasapartamentoa" class="boton-rojo">Book via Airbnb</a>
-                <br>
-                <a href="https://www.booking.com/hotel/ec/amathea-imperial.es.html?..." class="boton-azul">Book via Booking</a>
-            </div>
-
-            <div class="piso">
-                <h3>Apartment B</h3>
-                <div class="foto-piso"><img src="PIsoB.jpg" width="680" height="400" object-fit="cover"></div>
-                <p class="descripcion">One-bedroom apartment with a double bed, 2-seater sofa bed, one bathroom, and capacity for 3 people.</p>
-                <br>
-                <a href="http://airbnb.com/h/amatheaimperialsasapartamentob" class="boton-rojo">Book via Airbnb</a>
-                <br>
-                <a href="https://www.booking.com/hotel/ec/amathea-imperial.es.html?..." class="boton-azul">Book via Booking</a>
-            </div>
-        </section>
-
-        <section id="fotos" class="seccion">
-            <div class="galeria-collage">
-                <h1>Photos</h1>
-                <img src="foto `piso A.jpg" alt="Apartment A Photo">
-                <img src="foto entrada .jpg" alt="Entrance Photo">
-                <img src="PIsoB.jpg" alt="Apartment B Photo">
-                <img src="fachada.jpg" alt="Building facade">
-            </div>
-        </section>
-
-        <div style="text-align: center; margin: 30px 0;">
-            <button style="...">
-                📍 How to get there
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DPgRsqDjqDq/" data-instgrm-version="14"></blockquote>
-                <script async src="//www.instagram.com/embed.js"></script>
-            </button>
+      <div class="piso">
+        <h3>Apartment B</h3>
+        <div class="foto-piso">
+          <img src="PIsoB.jpg" width="680" height="400" alt="Apartment B" />
         </div>
+        <p class="descripcion">One-bedroom apartment with a double bed, a two-seater sofa bed, one bathroom, and capacity for 3 people.</p>
+        <a href="http://airbnb.com/h/amatheaimperialsasapartamentob" class="boton-rojo">Book via Airbnb</a><br>
+        <a href="https://www.booking.com/hotel/ec/amathea-imperial.es.html" class="boton-azul">Book via Booking</a>
+      </div>
+    </section>
 
-        <section id="ubicacion" class="seccion">
-            <h2>Location</h2>
-            <h3>We are located in Urbanización Privada El Sol, Machala - Ecuador.</h3>
-            <div class="mapa" style="position: relative; cursor: pointer;">
-                <a href="https://www.google.com/maps/dir/?api=1&destination=-3.267086694624063,-79.92287762699073" target="_blank" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:10;"></a>
-                <a href="https://www.google.com/maps/dir/?api=1&destination=-3.267086694624063,-79.92287762699073" class="boton-azul" style="display:block; width:250px; margin:20px auto; text-align:center;">
-                    📍 How to get there
-                </a>
-                <iframe src="https://www.google.com/maps/embed?..." width="100%" height="450" style="border-radius:10px; border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </section>
+    <section id="fotos" class="seccion">
+      <div class="galeria-collage">
+        <h2>Photos</h2>
+        <img src="foto `piso A.jpg" alt="Apartment A Photo" />
+        <img src="foto entrada .jpg" alt="Entrance Photo" />
+        <img src="PIsoB.jpg" alt="Apartment B Photo" />
+        <img src="fachada.jpg" alt="Building facade" />
+      </div>
+    </section>
 
-        <section id="contacto" class="seccion">
-            <h2>Contact</h2>
-            <form>
-                <label>Name:</label>
-                <input type="text" placeholder="Amathea Imperial">
+    <!-- Cómo llegar desde Instagram -->
+    <div style="text-align: center; margin: 30px 0;">
+      <h3>📍 How to Get There</h3>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DPgRsqDjqDq/" data-instgrm-version="14"></blockquote>
+      <script async src="//www.instagram.com/embed.js"></script>
+    </div>
 
-                <label>Email:</label>
-                <input type="email" placeholder="amatheaimperialsas@gmail.com">
-
-                <label>Phone:</label>
-                <input type="tel" placeholder="+593989114500">
-
-                <label>WhatsApp:</label>
-                <input type="tel" placeholder="+34618939220">
-                <input type="tel" placeholder="+34660184759">
-
-                <label>Message:</label>
-                <textarea placeholder="For any issues, we will be happy to assist you via WhatsApp, e-mail, or phone call 24/7."></textarea>
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Amathea Imperial S.A.S. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+    <section id="ubicacion" class="seccion">
+      <h2>Location</h2>
+      <h3>We are located in Urbanización Privada El Sol, Machala - Ecuador.</h3>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=-3.267086694624063,-79.92287762699073"
+         class="boton-azul"
+         style="display:block; width:250px; margin:20px auto; text-align:center;">
+        📍 Get Directions
+      </a
