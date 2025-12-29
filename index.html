@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Amathea Imperial S.A.S</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+  <!-- ================= HEADER ================= -->
   <header>
     <div class="logo">
       <h1>Amathea Imperial</h1>
     </div>
 
-    <!-- Barra de navegación con selector de idioma integrado -->
+    <!-- Navegación + Idioma -->
     <nav class="navbar" style="display:flex; align-items:center; justify-content:space-between;">
       <div class="menu-toggle" id="mobile-menu">☰</div>
 
@@ -26,13 +27,14 @@
       </ul>
 
       <!-- Selector de idioma -->
-      <select onchange="location = this.value;" style="padding:8px; border-radius:6px;">
+      <select onchange="location=this.value" style="padding:8px;border-radius:6px;">
         <option value="index.html" selected>🌐 Español</option>
         <option value="index-en.html">🇬🇧 English</option>
       </select>
     </nav>
   </header>
 
+  <!-- ================= MAIN ================= -->
   <main>
     <!-- Inicio -->
     <section id="inicio" class="seccion">
@@ -43,8 +45,8 @@
     <!-- Logo -->
     <section class="seccion">
       <h2>Amathea Imperial S.A.S</h2>
-      <div class="piso" style="background:none; padding:0; width:fit-content; margin:0 auto;">
-        <img src="tarjeta%20de%20presentacion%20amathea%20frontal.png" width="200" alt="Logotipo de Amathea Imperial">
+      <div style="text-align:center;">
+        <img src="tarjeta%20de%20presentacion%20amathea%20frontal.png" width="200" alt="Logotipo Amathea Imperial">
       </div>
     </section>
 
@@ -54,9 +56,9 @@
       <p>
         AMATHEA IMPERIAL S.A.S. es una empresa dedicada a ofrecer servicios de hospedaje de corta estancia con los más altos estándares de calidad, atención y profesionalismo.
         <br><br>
-        Contamos con dos apartamentos de lujo, completamente nuevos, amoblados y equipados para satisfacer las necesidades de quienes buscan comodidad, privacidad y estilo durante su estadía.
+        Contamos con dos apartamentos de lujo, completamente nuevos, amoblados y equipados para satisfacer las necesidades de quienes buscan comodidad, privacidad y estilo.
         <br><br>
-        Nos caracteriza la amabilidad, discreción y compromiso con nuestros huéspedes. Nuestro objetivo es garantizar que cada visita sea una experiencia agradable, cómoda y memorable.
+        Nos caracteriza la amabilidad, discreción y compromiso con nuestros huéspedes, garantizando una experiencia cómoda, segura y memorable.
       </p>
     </section>
 
@@ -68,7 +70,7 @@
         <h3>Apartamento A</h3>
         <img src="foto `piso A.jpg" width="680" height="400" alt="Apartamento A">
         <p class="descripcion">
-          Apartamento con dos habitaciones, cama matrimonial, sofá‑cama de 2 plazas, 2 baños y capacidad para 5 personas.
+          Dos habitaciones, cama matrimonial, sofá‑cama de 2 plazas, 2 baños y capacidad para 5 personas.
         </p>
         <a href="http://airbnb.com/h/amatheaimperialsasapartamentoa" class="boton-rojo">Reserva vía Airbnb</a><br>
         <a href="https://www.booking.com/hotel/ec/amathea-imperial.es.html" class="boton-azul">Reserva vía Booking</a>
@@ -78,7 +80,7 @@
         <h3>Apartamento B</h3>
         <img src="PIsoB.jpg" width="680" height="400" alt="Apartamento B">
         <p class="descripcion">
-          Apartamento de una habitación con cama doble, sofá‑cama de 2 plazas, un baño y capacidad para 3 personas.
+          Una habitación, cama doble, sofá‑cama de 2 plazas, un baño y capacidad para 3 personas.
         </p>
         <a href="http://airbnb.com/h/amatheaimperialsasapartamentob" class="boton-rojo">Reserva vía Airbnb</a><br>
         <a href="https://www.booking.com/hotel/ec/amathea-imperial.es.html" class="boton-azul">Reserva vía Booking</a>
@@ -99,17 +101,22 @@
     <!-- Ubicación -->
     <section id="ubicacion" class="seccion">
       <h2>Ubicación</h2>
-      <h3>Urbanización Privada El Sol, Machala - Ecuador</h3>
-      <a href="https://www.google.com/maps/dir/?api=1&destination=-3.267086694624063,-79.92287762699073"
+      <h3>Urbanización Privada El Sol, Machala – Ecuador</h3>
+
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Urbanización+Privada+El+Sol+Machala+Ecuador"
          class="boton-azul"
-         style="display:block; width:250px; margin:20px auto; text-align:center;">
+         style="display:block;width:260px;margin:20px auto;text-align:center;">
         📍 Cómo llegar
       </a>
 
+      <!-- MAPA CORRECTO (SIN ERROR) -->
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d995.8334363985587!2d-79.92287762699073!3d-3.267086694624063"
-        width="100%" height="450" style="border:0; border-radius:10px;"
-        loading="lazy"></iframe>
+        src="https://www.google.com/maps?q=Urbanización%20Privada%20El%20Sol%2C%20Machala%2C%20Ecuador&output=embed"
+        width="100%"
+        height="450"
+        style="border:0;border-radius:10px;"
+        loading="lazy">
+      </iframe>
     </section>
 
     <!-- Contacto -->
@@ -124,6 +131,7 @@
     </section>
   </main>
 
+  <!-- ================= FOOTER ================= -->
   <footer>
     <p>&copy; 2025 Amathea Imperial S.A.S. Todos los derechos reservados.</p>
   </footer>
