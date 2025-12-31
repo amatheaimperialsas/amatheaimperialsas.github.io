@@ -8,16 +8,17 @@
 </head>
 
 <body>
+
   <!-- ========== HEADER ========== -->
   <header>
     <div class="logo">
       <h1>Amathea Imperial</h1>
     </div>
 
-    <nav class="navbar" style="display: flex; align-items: center; justify-content: space-between;">
+    <nav class="navbar" style="display:flex; align-items:center; justify-content:space-between;">
       <div class="menu-toggle" id="mobile-menu">☰</div>
 
-      <ul class="nav-list" style="display: flex; gap: 20px; list-style: none; margin: 0; padding: 0;">
+      <ul class="nav-list" style="display:flex; gap:20px; list-style:none; margin:0; padding:0;">
         <li><a href="#inicio">Home</a></li>
         <li><a href="#about-us">About Us</a></li>
         <li><a href="#photos">Photos</a></li>
@@ -25,7 +26,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
 
-      <!-- Language Selector -->
+      <!-- Language selector -->
       <select onchange="location = this.value;" style="padding: 8px; border-radius: 5px;">
         <option value="index-en.html" selected>🇬🇧 English</option>
         <option value="index.html">🌐 Español</option>
@@ -33,15 +34,14 @@
     </nav>
   </header>
 
-  <!-- ========== MAIN ========== -->
+  <!-- ========== START ========== -->
   <main>
-    <!-- Welcome Section -->
     <section id="inicio" class="seccion">
       <h2>Welcome to Amathea Imperial</h2>
       <h3>Rent one of our exclusive apartments and enjoy maximum comfort and security.</h3>
     </section>
 
-    <!-- Logo Section -->
+    <!-- Logo -->
     <section class="seccion">
       <h2>Amathea Imperial S.A.S</h2>
       <div style="text-align:center;">
@@ -53,13 +53,13 @@
     <section id="about-us" class="seccion">
       <h2>About Us</h2>
       <p>
-        AMATHEA IMPERIAL S.A.S. is a company dedicated to offering short-stay accommodation services with the highest standards of quality, attention, and professionalism. 
+        AMATHEA IMPERIAL S.A.S. is a company dedicated to offering short-stay accommodation services with the highest standards of quality, comfort, and professionalism.
         <br><br>
-        We offer two luxury apartments, fully furnished and equipped to meet the needs of guests looking for comfort, privacy, and style.
+        We offer two luxury apartments, fully equipped and designed for guests seeking comfort, privacy, and refined style.
         <br><br>
-        We are known for our kindness, discretion, and commitment to our guests. Our goal is to make every visit a pleasant and memorable experience.
+        We are known for our kindness, discretion, and dedication to guest satisfaction. Our goal is to make every visit a memorable experience.
         <br><br>
-        We believe hospitality is an art. That’s why we work daily to make everyone who chooses us feel welcome, cared for, and valued.
+        We believe that hospitality is an art — and we work every day to ensure each guest feels welcomed, cared for, and valued.
       </p>
     </section>
 
@@ -70,7 +70,7 @@
       <div class="piso">
         <h3>Apartment A</h3>
         <img src="foto `piso A.jpg" width="680" height="400" alt="Apartment A" />
-        <p class="descripcion">Two-bedroom apartment with a double bed, a two-seater sofa bed, two bathrooms, and capacity for 5 guests.</p>
+        <p>Two-bedroom apartment with a double bed, two-seater sofa bed, two bathrooms, and capacity for 5 guests.</p>
         <a href="http://airbnb.com/h/amatheaimperialsasapartamentoa" class="boton-rojo">Book via Airbnb</a><br>
         <a href="https://www.booking.com/hotel/ec/amathea-imperial.es.html" class="boton-azul">Book via Booking</a>
       </div>
@@ -78,7 +78,7 @@
       <div class="piso">
         <h3>Apartment B</h3>
         <img src="PIsoB.jpg" width="680" height="400" alt="Apartment B" />
-        <p class="descripcion">One-bedroom apartment with a double bed, a two-seater sofa bed, one bathroom, and capacity for 3 guests.</p>
+        <p>One-bedroom apartment with a double bed, two-seater sofa bed, one bathroom, and capacity for 3 guests.</p>
         <a href="http://airbnb.com/h/amatheaimperialsasapartamentob" class="boton-rojo">Book via Airbnb</a><br>
         <a href="https://www.booking.com/hotel/ec/amathea-imperial.es.html" class="boton-azul">Book via Booking</a>
       </div>
@@ -96,47 +96,47 @@
     </section>
 
     <!-- Instagram Video -->
-    <section class="seccion" style="text-align: center;">
+    <section class="seccion" style="text-align:center;">
       <h2>📍 How to Get There</h2>
-      <div style="max-width: 400px; margin: 0 auto;">
+
+      <div style="max-width:400px; margin:auto;">
         <blockquote class="instagram-media"
           data-instgrm-permalink="https://www.instagram.com/reel/DPgRsqDjqDq/"
           data-instgrm-version="14"
-          style="margin: 0 auto; width: 100%; max-width: 400px; border: none; padding: 0;">
+          style="margin:auto; width:100%; max-width:400px;">
         </blockquote>
       </div>
+
       <script async src="//www.instagram.com/embed.js"></script>
     </section>
 
-    <!-- Google Maps -->
+    <!-- Location -->
     <section id="location" class="seccion">
       <h2>Location</h2>
       <h3>We are located in Urbanización Privada El Sol, Machala – Ecuador</h3>
 
       <a href="https://www.google.com/maps/dir/?api=1&destination=Urbanización+Privada+El+Sol+Machala+Ecuador"
          class="boton-azul"
-         style="display:block; width:260px; margin:20px auto; text-align:center;">
+         style="display:block; width:250px; margin:20px auto; text-align:center;">
         📍 Get Directions
       </a>
 
       <iframe
-        src="https://www.google.com/maps?q=Urbanización%20Privada%20El%20Sol%2C%20Machala%2C%20Ecuador&output=embed"
+        src="https://www.google.com/maps?q=Urbanización%20Privada%20El%20Sol%20Machala%20Ecuador&output=embed"
         width="100%"
         height="450"
         style="border-radius:10px; border:0;"
-        allowfullscreen=""
-        loading="lazy">
-      </iframe>
+        allowfullscreen
+        loading="lazy"></iframe>
     </section>
 
-    <!-- CONTACT -->
-<section id="contacto" class="seccion" style="padding: 60px 20px; text-align: center;">
+<!-- CONTACT — ELEGANT VERSION ENGLISH -->
+<section id="contact" class="seccion" style="padding: 60px 20px; text-align: center;">
   
   <h2 style="font-size: 32px; margin-bottom: 10px; color:#0a2647;">
     Contact
   </h2>
 
-  <!-- Elegant divider -->
   <div style="width: 60px; height: 3px; background:#0a2647; margin: 0 auto 30px auto; border-radius: 2px;"></div>
 
   <div style="
@@ -151,6 +151,9 @@
       line-height: 1.7;
       color: #333;
   ">
+
+    <p><strong style="color:#0a2647;">Name</strong><br>
+      Amathea Imperial
     </p>
 
     <p><strong style="color:#0a2647;">Email</strong><br>
@@ -168,14 +171,17 @@
     </p>
 
     <p><strong style="color:#0a2647;">WhatsApp</strong><br>
+
       <a href="https://wa.me/34618939220" target="_blank" 
          style="color:#0a2647; text-decoration:none; font-weight:500;">
          💬 +34 618 939 220
       </a><br>
+
       <a href="https://wa.me/34660184759" target="_blank" 
          style="color:#0a2647; text-decoration:none; font-weight:500;">
          💬 +34 660 184 759
       </a>
+
     </p>
 
     <p><strong style="color:#0a2647;">Message</strong><br>
@@ -222,34 +228,40 @@
   </div>
 </section>
 
-  <!-- ========== FOOTER ========== -->
-  <!-- Social Media -->
-<div style="text-align: center; margin: 40px 0;">
-  <h3>Follow us on social media</h3>
+<!-- SOCIAL MEDIA ICONS -->
+<div style="text-align: center; margin: 50px 0 20px 0;">
+  <h3 style="color:#0a2647; font-size:22px;">Follow us on social media</h3>
 
-  <!-- Instagram -->
-  <a href="https://www.instagram.com/amatheaimperialsas" target="_blank" style="margin: 0 15px;">
-    <img 
-      src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
-      alt="Instagram"
-      width="40"
-      height="40"
-      style="filter: invert(26%) sepia(73%) saturate(590%) hue-rotate(316deg) brightness(96%) contrast(91%);"
-    >
-  </a>
+  <div style="margin-top: 15px;">
 
-  <!-- Facebook -->
-  <a href="https://www.facebook.com/amatheaimperialsas" target="_blank" style="margin: 0 15px;">
-    <img 
-      src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
-      alt="Facebook"
-      width="40"
-      height="40"
-      style="filter: invert(21%) sepia(65%) saturate(720%) hue-rotate(185deg) brightness(95%) contrast(95%);"
-    >
-  </a>
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/amatheaimperial?igsh=MW4zY2V4emJtM216bQ%3D%3D&utm_source=qr" 
+       target="_blank" 
+       style="margin: 0 15px; display:inline-block;">
+      <img 
+        src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
+        alt="Instagram"
+        width="38"
+        height="38"
+        style="filter: invert(26%) sepia(73%) saturate(590%) hue-rotate(316deg) brightness(96%) contrast(91%);">
+    </a>
+
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/profile.php?id=61580272500947" 
+       target="_blank"
+       style="margin: 0 15px; display:inline-block;">
+      <img 
+        src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
+        alt="Facebook"
+        width="38"
+        height="38"
+        style="filter: invert(21%) sepia(65%) saturate(720%) hue-rotate(185deg) brightness(95%) contrast(95%);">
+    </a>
+
+  </div>
 </div>
 
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 Amathea Imperial S.A.S. All rights reserved.</p>
   </footer>
