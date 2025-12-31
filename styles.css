@@ -1,3 +1,4 @@
+/* RESET GENERAL */
 * {
     margin: 0;
     padding: 0;
@@ -6,22 +7,15 @@
 
 body {
     font-family: "Poppins", sans-serif;
-    color: #111; /* texto oscuro y legible */
-
-    /* FONDO con difuminado suave */
+    color: #111;
     background:
-        linear-gradient(
-            rgba(255, 255, 255, 0.82),   /* Aumentar este valor = más difuminado */
-            rgba(255, 255, 255, 0.82)
-        ),
+        linear-gradient(rgba(255,255,255,0.86), rgba(255,255,255,0.86)),
         url("fondo.png") center center fixed no-repeat;
-
     background-size: cover;
     min-height: 100vh;
 }
 
-
-/* Header */
+/* ===== HEADER ===== */
 header {
     background-color: #0a2647;
     color: white;
@@ -29,11 +23,15 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .logo h1 {
     font-size: 1.8rem;
-   
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 
 .navbar ul {
@@ -46,14 +44,14 @@ header {
     text-decoration: none;
     color: white;
     font-weight: 500;
-    
 }
 
 .navbar a:hover {
     color: #ffd700;
+    transition: 0.3s;
 }
 
-/* Menú hamburguesa */
+/* ===== MENÚ MÓVIL ===== */
 .menu-toggle {
     display: none;
     font-size: 2rem;
@@ -61,139 +59,146 @@ header {
 }
 
 @media (max-width: 768px) {
+
     .menu-toggle {
         display: block;
     }
 
     .nav-list {
         display: none;
-        flex-direction: column;
         position: absolute;
+        flex-direction: column;
         background: #0a2647;
         top: 70px;
         right: 0;
-        width: 200px;
-        text-align: right;
+        width: 220px;
         padding: 1rem;
+        border-radius: 0 0 0 12px;
+        box-shadow: -2px 4px 6px rgba(0,0,0,0.25);
     }
 
     .nav-list.active {
         display: flex;
     }
+
+    .nav-list a {
+        padding: 10px 0;
+    }
 }
 
-/* Secciones */
+/* ===== SECCIONES ===== */
 .seccion {
-    font-size: larger;
-    padding: 2rem;
-    text-align:justify;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
-    
+    padding: 3rem 1.5rem;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
 }
 
+.seccion h2 {
+    color: #0a2647;
+    margin-bottom: 1.2rem;
+    font-size: 2rem;
+}
+
+.seccion p {
+    line-height: 1.7;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* ===== TARJETAS DE APARTAMENTOS ===== */
 .piso {
     background: white;
-    margin: 1rem auto;
-    padding: 1rem;
+    margin: 2rem auto;
+    padding: 1.8rem;
+    border-radius: 12px;
+    max-width: 780px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.piso h3 {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    color: #0a2647;
+}
+
+.piso img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+/* ===== BOTONES ELEGANTES ===== */
+.boton-azul,
+.boton-rojo {
+    padding: 12px 24px;
     border-radius: 8px;
-    max-width: 700px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.foto-piso {
-    background: #ddd;
-    width: fit-content;
-    height:fit-content;
-    margin: 1rem 0;
-    object-fit: contain;
-}
-
-/* Galería */
-.galeria {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.galeria img {
-    width: 250px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-/* Contacto */
-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: auto;
-    gap: 0.5rem;
-}
-
-input, textarea {
-    padding: 0.5rem;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    font: justify;
-    
+    display: inline-block;
+    margin: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
 .boton-azul {
-    background-color: #007bff; /* Color azul */
+    background-color: #0a60d0;
     color: white;
-    padding: 10px 20px;
-    text-decoration: none; /* Elimina el subrayado */
-    border-radius: 5px;
-    display: inline-block; /* Necesario para aplicar padding y margen */
-    margin: 5px;
-   
-  }
-  .boton-rojo {
-    background-color: #dc3545; /* Color rojo */
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none; /* Elimina el subrayado */
-    border-radius: 5px;
-    display: inline-block; /* Necesario para aplicar padding y margen */
-    margin: 5px;
-   
-  }
-  
-  /* Opcional: para cambiar el color al pasar el ratón (hover) */
-  .boton-azul:hover {
-    background-color: #0056b3;
-  }
-  
-  .boton-rojo:hover {
+}
+.boton-azul:hover {
+    background-color: #084a9b;
+}
+
+.boton-rojo {
     background-color: #c82333;
-  }
-/* Footer */
+    color: white;
+}
+.boton-rojo:hover {
+    background-color: #a11825;
+}
+
+/* ===== GALERÍA ===== */
+.galeria-collage {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.galeria-collage img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 4px solid white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.galeria-collage img:hover {
+    transform: scale(1.03);
+}
+
+/* ===== FOOTER ===== */
 footer {
     background: #0a2647;
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 1.2rem;
     margin-top: 2rem;
+    font-size: 0.9rem;
 }
-h2 , h3 ,div {
+
+/* ===== TITULOS CENTRADOS ===== */
+h2, h3 {
     text-align: center;
-    image-rendering:optimizeQuality;
-}
-.collage-container {
-    display: grid; /* o display: flex; flex-wrap: wrap; */
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ejemplo de grid responsivo */
-    gap: 10px; /* Espacio entre imágenes */
-    padding: 10px;
-}
-.galeria-collage img {
-    width: 300px; /* Ancho de cada imagen */
-    height: 200px; /* Alto de cada imagen */
-    border: 5px solid white; /* Borde blanco */
-    box-shadow: 2px 2px 5px grey; /* Sombra */
-    transform:matrix3d()/* Rota la imagen 10 grados */
 }
 
+/* ===== ESTILO PARA ICONOS DE REDES ===== */
+.social-icons img {
+    transition: 0.3s;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
 
+.social-icons img:hover {
+    transform: scale(1.1);
+}
