@@ -3,8 +3,109 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="format-detection" content="telephone=yes">
   <title>Amathea Imperial S.A.S</title>
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .mobile-sticky-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #ffffff;
+      box-shadow: 0 -4px 14px rgba(0,0,0,0.12);
+      padding: 10px 12px;
+      z-index: 9999;
+      box-sizing: border-box;
+    }
+
+    .mobile-sticky-bar .mobile-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .mobile-sticky-bar a {
+      flex: 1;
+      text-align: center;
+      text-decoration: none;
+      padding: 12px 10px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .mobile-call-btn {
+      background: #0a2647;
+      color: #fff;
+    }
+
+    .mobile-wa-btn {
+      background: #25D366;
+      color: #fff;
+    }
+
+    body.mobile-user {
+      padding-bottom: 85px;
+    }
+
+    .boton-contacto {
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin: 8px;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    .boton-llamar {
+      border: 1px solid #0a2647;
+      color: #0a2647;
+    }
+
+    .boton-llamar:hover {
+      background-color: #0a2647;
+      color: white;
+    }
+
+    .boton-whatsapp {
+      border: 1px solid #25D366;
+      color: #25D366;
+    }
+
+    .boton-whatsapp:hover {
+      background-color: #25D366;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-sticky-bar.show {
+        display: block;
+      }
+
+      .nav-list {
+        gap: 12px !important;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .piso img,
+      .galeria-collage img {
+        width: 100% !important;
+        height: auto !important;
+      }
+
+      iframe {
+        height: 320px !important;
+      }
+
+      #contacto .contact-card {
+        padding: 20px !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -15,7 +116,7 @@
       <h1>Amathea Imperial</h1>
     </div>
 
-    <nav class="navbar" style="display:flex; align-items:center; justify-content:space-between;">
+    <nav class="navbar" style="display:flex; align-items:center; justify-content:space-between; gap:15px; flex-wrap:wrap;">
       <div class="menu-toggle" id="mobile-menu">☰</div>
 
       <ul class="nav-list" style="display:flex; gap:20px; list-style:none; margin:0; padding:0;">
@@ -26,7 +127,6 @@
         <li><a href="#contacto">Contacto</a></li>
       </ul>
 
-      <!-- Selector de idioma -->
       <select onchange="location = this.value;" style="padding: 8px; border-radius: 5px;">
         <option value="index.html" selected>🌐 Español</option>
         <option value="index-en.html">🇬🇧 English</option>
@@ -68,18 +168,18 @@
 
       <div class="piso">
         <h3>Apartamento A</h3>
-        <img src="foto `piso A.jpg" width="680" height="400" alt="Apartamento A" />
+        <img src="foto-piso-a.jpg" width="680" height="400" alt="Apartamento A" />
         <p>Apartamento con dos habitaciones, cama matrimonial, sofá-cama, dos baños y capacidad para 5 personas.</p>
-        <a href="http://airbnb.com/h/amatheaimperialsasapartamentob" class="boton-rojo">Reserva vía Airbnb</a><br>
-        <a href="https://www.booking.com/hotel/ec/amathea-imperial.es.html" class="boton-azul">Reserva vía Booking</a>
+        <a href="http://airbnb.com/h/amatheaimperialsasapartamentoa" class="boton-rojo" target="_blank" rel="noopener noreferrer">Reserva vía Airbnb</a><br>
+        <a href="https://www.booking.com/hotel/ec/amathea-imperial.es.html" class="boton-azul" target="_blank" rel="noopener noreferrer">Reserva vía Booking</a>
       </div>
 
       <div class="piso">
         <h3>Apartamento B</h3>
-        <img src="PIsoB.jpg" width="680" height="400" alt="Apartamento B" />
+        <img src="piso-b.jpg" width="680" height="400" alt="Apartamento B" />
         <p>Apartamento de una habitación con cama doble, sofá-cama, un baño y capacidad para 3 personas.</p>
-        <a href="http://airbnb.com/h/amatheaimperialsasapartamentoa" class="boton-rojo">Reserva vía Airbnb</a><br>
-        <a href="https://www.booking.com/hotel/ec/amathea-imperial.es.html" class="boton-azul">Reserva vía Booking</a>
+        <a href="http://airbnb.com/h/amatheaimperialsasapartamentob" class="boton-rojo" target="_blank" rel="noopener noreferrer">Reserva vía Airbnb</a><br>
+        <a href="https://www.booking.com/hotel/ec/amathea-imperial.es.html" class="boton-azul" target="_blank" rel="noopener noreferrer">Reserva vía Booking</a>
       </div>
     </section>
 
@@ -87,9 +187,9 @@
     <section id="fotos" class="seccion">
       <h2>Fotos</h2>
       <div class="galeria-collage">
-        <img src="foto `piso A.jpg" alt="Foto A" />
-        <img src="foto entrada .jpg" alt="Entrada" />
-        <img src="PIsoB.jpg" alt="Apartamento B" />
+        <img src="foto-piso-a.jpg" alt="Foto A" />
+        <img src="foto-entrada.jpg" alt="Entrada" />
+        <img src="piso-b.jpg" alt="Apartamento B" />
         <img src="fachada.jpg" alt="Fachada" />
       </div>
     </section>
@@ -106,7 +206,7 @@
         </blockquote>
       </div>
 
-      <script async src="//www.instagram.com/embed.js"></script>
+      <script async src="https://www.instagram.com/embed.js"></script>
     </section>
 
     <!-- Ubicación -->
@@ -116,6 +216,8 @@
 
       <a href="https://www.google.com/maps/dir/?api=1&destination=Urbanización+Privada+El+Sol+Machala+Ecuador"
          class="boton-azul"
+         target="_blank"
+         rel="noopener noreferrer"
          style="display:block; width:250px; margin:20px auto; text-align:center;">
         📍 Cómo llegar
       </a>
@@ -129,149 +231,181 @@
         loading="lazy"></iframe>
     </section>
 
+    <!-- CONTACTO -->
+    <section id="contacto" class="seccion" style="padding: 60px 20px; text-align: center;">
+      
+      <h2 style="font-size: 32px; margin-bottom: 10px; color:#0a2647;">
+        Contacto
+      </h2>
 
-    <!-- CONTACTO ELEGANTE -->
-<section id="contacto" class="seccion" style="padding: 60px 20px; text-align: center;">
-  
-  <h2 style="font-size: 32px; margin-bottom: 10px; color:#0a2647;">
-    Contacto
-  </h2>
+      <div style="width: 60px; height: 3px; background:#0a2647; margin: 0 auto 30px auto; border-radius: 2px;"></div>
 
-  <div style="width: 60px; height: 3px; background:#0a2647; margin: 0 auto 30px auto; border-radius: 2px;"></div>
+      <div class="contact-card" style="
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 25px 35px;
+          background: rgba(255, 255, 255, 0.55);
+          backdrop-filter: blur(6px);
+          border-radius: 12px;
+          box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+          text-align: left;
+          line-height: 1.7;
+          color: #333;
+      ">
 
-  <div style="
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 25px 35px;
-      background: rgba(255, 255, 255, 0.55);
-      backdrop-filter: blur(6px);
-      border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-      text-align: left;
-      line-height: 1.7;
-      color: #333;
-  ">
+        <p><strong style="color:#0a2647;">Nombre</strong><br>
+          Amathea Imperial
+        </p>
 
-    <p><strong style="color:#0a2647;">Nombre</strong><br>
-      Amathea Imperial
-    </p>
+        <p><strong style="color:#0a2647;">Email</strong><br>
+          <a href="mailto:info@amatheaimperialsas.com" 
+             style="color:#0a2647; text-decoration:none; font-weight:500;">
+             info@amatheaimperialsas.com
+          </a>
+        </p>
 
-    <p><strong style="color:#0a2647;">Email</strong><br>
-      <a href="mailto:info@amatheaimperialsas.com" 
-         style="color:#0a2647; text-decoration:none; font-weight:500;">
-         info@amatheaimperialsas.com
-      </a>
-    </p>
+        <p><strong style="color:#0a2647;">Teléfono</strong><br>
+          <a href="tel:+593989114500" 
+             style="color:#0a2647; text-decoration:none; font-weight:500;">
+             📞 +593 989 114 500
+          </a><br>
 
-    <p><strong style="color:#0a2647;">Teléfono</strong><br>
-      <a href="tel:+593989114500" 
-         style="color:#0a2647; text-decoration:none; font-weight:500;">
-         📞 +593 989 114 500
-      </a>
-    </p>
+          <a href="tel:+593968701003" 
+             style="color:#0a2647; text-decoration:none; font-weight:500;">
+             📞 +593 968 701 003
+          </a>
+        </p>
 
-    <p><strong style="color:#0a2647;">WhatsApp</strong><br>
+        <p><strong style="color:#0a2647;">WhatsApp</strong><br>
 
-      <a href="https://wa.me/34618939220" target="_blank" 
-         style="color:#0a2647; text-decoration:none; font-weight:500;">
-         💬 +34 618 939 220
-      </a><br>
+          <a href="https://wa.me/593968701003" target="_blank" rel="noopener noreferrer"
+             style="color:#0a2647; text-decoration:none; font-weight:500;">
+             💬 +593 968 701 003
+          </a><br>
 
-      <a href="https://wa.me/34660184759" target="_blank" 
-         style="color:#0a2647; text-decoration:none; font-weight:500;">
-         💬 +34 660 184 759
-      </a>
+          <a href="https://wa.me/34618939220" target="_blank" rel="noopener noreferrer"
+             style="color:#0a2647; text-decoration:none; font-weight:500;">
+             💬 +34 618 939 220
+          </a><br>
 
-    </p>
+          <a href="https://wa.me/34660184759" target="_blank" rel="noopener noreferrer"
+             style="color:#0a2647; text-decoration:none; font-weight:500;">
+             💬 +34 660 184 759
+          </a>
 
-    <p><strong style="color:#0a2647;">Mensaje</strong><br>
-      Para cualquier consulta estaremos encantados de atenderle vía WhatsApp, email o llamada telefónica las 24 horas.
-    </p>
+        </p>
 
-  </div>
+        <p><strong style="color:#0a2647;">Mensaje</strong><br>
+          Para cualquier consulta estaremos encantados de atenderle vía WhatsApp, email o llamada telefónica las 24 horas.
+        </p>
 
-  <!-- Botones minimalistas -->
-  <div style="margin-top: 25px;">
-    
-    <a href="tel:+593989114500"
-       style="
-        display:inline-block;
-        padding:10px 22px;
-        border-radius:8px;
-        border:1px solid #0a2647;
-        color:#0a2647;
-        text-decoration:none;
-        margin:8px;
-        transition:0.3s;
-       "
-       onmouseover="this.style.backgroundColor='#0a2647'; this.style.color='white';"
-       onmouseout="this.style.backgroundColor='transparent'; this.style.color='#0a2647';">
-      📞 Llamar
-    </a>
+      </div>
 
-    <a href="https://wa.me/593989114500" target="_blank"
-       style="
-        display:inline-block;
-        padding:10px 22px;
-        border-radius:8px;
-        border:1px solid #25D366;
-        color:#25D366;
-        text-decoration:none;
-        margin:8px;
-        transition:0.3s;
-       "
-       onmouseover="this.style.backgroundColor='#25D366'; this.style.color='white';"
-       onmouseout="this.style.backgroundColor='transparent'; this.style.color='#25D366';">
-      💬 WhatsApp
-    </a>
+      <!-- Botones -->
+      <div style="margin-top: 25px;">
+        
+        <a href="tel:+593989114500"
+           class="boton-contacto boton-llamar cta-call-main">
+          📞 Llamar Ecuador
+        </a>
 
-  </div>
-</section>
+        <a href="https://wa.me/593989114500" target="_blank" rel="noopener noreferrer"
+           class="boton-contacto boton-whatsapp">
+          💬 WhatsApp Ecuador
+        </a>
+
+        <a href="https://wa.me/593968701003" target="_blank" rel="noopener noreferrer"
+           class="boton-contacto boton-whatsapp cta-wa-main">
+          💬 WhatsApp +593 968 701 003
+        </a>
+
+      </div>
+    </section>
 
     <!-- Redes Sociales -->
-<div style="text-align: center; margin: 50px 0 20px 0;">
-  <h3 style="color:#0a2647; font-size:22px;">Síguenos en redes sociales</h3>
+    <div style="text-align: center; margin: 50px 0 20px 0;">
+      <h3 style="color:#0a2647; font-size:22px;">Síguenos en redes sociales</h3>
 
-  <div style="margin-top: 15px;">
+      <div style="margin-top: 15px;">
 
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/amatheaimperial?igsh=MW4zY2V4emJtM216bQ%3D%3D&utm_source=qr" 
-       target="_blank" 
-       style="margin: 0 15px; display:inline-block;">
-      <img 
-        src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
-        alt="Instagram"
-        width="38"
-        height="38"
-        style="filter: invert(26%) sepia(73%) saturate(590%) hue-rotate(316deg) brightness(96%) contrast(91%);">
-    </a>
+        <a href="https://www.instagram.com/amatheaimperial?igsh=MW4zY2V4emJtM216bQ%3D%3D&utm_source=qr" 
+           target="_blank" rel="noopener noreferrer"
+           style="margin: 0 15px; display:inline-block;">
+          <img 
+            src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
+            alt="Instagram"
+            width="38"
+            height="38"
+            style="filter: invert(26%) sepia(73%) saturate(590%) hue-rotate(316deg) brightness(96%) contrast(91%);">
+        </a>
 
-    <!-- Facebook -->
-    <a href="https://www.facebook.com/profile.php?id=61580272500947" 
-       target="_blank"
-       style="margin: 0 15px; display:inline-block;">
-      <img 
-        src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
-        alt="Facebook"
-        width="38"
-        height="38"
-        style="filter: invert(21%) sepia(65%) saturate(720%) hue-rotate(185deg) brightness(95%) contrast(95%);">
-    </a>
+        <a href="https://www.facebook.com/profile.php?id=61580272500947" 
+           target="_blank" rel="noopener noreferrer"
+           style="margin: 0 15px; display:inline-block;">
+          <img 
+            src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
+            alt="Facebook"
+            width="38"
+            height="38"
+            style="filter: invert(21%) sepia(65%) saturate(720%) hue-rotate(185deg) brightness(95%) contrast(95%);">
+        </a>
 
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Barra fija móvil -->
+  <div class="mobile-sticky-bar" id="mobileStickyBar">
+    <div class="mobile-actions">
+      <a href="tel:+593989114500" class="mobile-call-btn" id="mobileCallBtn">📞 Llamar</a>
+      <a href="https://wa.me/593968701003" target="_blank" rel="noopener noreferrer" class="mobile-wa-btn" id="mobileWaBtn">💬 WhatsApp</a>
+    </div>
   </div>
-</div>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Amathea Imperial S.A.S. Todos los derechos reservados.</p>
+    <p>&copy; 2026 Amathea Imperial S.A.S. Todos los derechos reservados.</p>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const isMobile =
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+        window.innerWidth <= 768;
+
+      const body = document.body;
+      const stickyBar = document.getElementById("mobileStickyBar");
+      const mobileCallBtn = document.getElementById("mobileCallBtn");
+      const mobileWaBtn = document.getElementById("mobileWaBtn");
+      const mainCallBtn = document.querySelector(".cta-call-main");
+      const mainWaBtn = document.querySelector(".cta-wa-main");
+
+      if (isMobile) {
+        body.classList.add("mobile-user");
+        stickyBar.classList.add("show");
+
+        if (mainCallBtn) {
+          mainCallBtn.textContent = "📞 Llamar ahora";
+        }
+
+        if (mainWaBtn) {
+          mainWaBtn.textContent = "💬 WhatsApp inmediato";
+        }
+
+        if (mobileCallBtn) {
+          mobileCallBtn.setAttribute("href", "tel:+593989114500");
+        }
+
+        if (mobileWaBtn) {
+          mobileWaBtn.setAttribute("href", "https://wa.me/593968701003");
+        }
+      } else {
+        body.classList.add("desktop-user");
+      }
+    });
+  </script>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
