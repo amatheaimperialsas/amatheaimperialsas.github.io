@@ -5,153 +5,366 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Amathea Imperial S.A.S</title>
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      position: relative;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 32px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .nav-list {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-list li a {
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-wrap: nowrap;
+        align-items: center;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-list {
+        display: none !important;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 260px;
+        background: #0a2647;
+        padding: 20px;
+        border-radius: 0 0 0 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+        z-index: 999;
+      }
+
+      .nav-list.active {
+        display: flex !important;
+      }
+
+      .nav-list li {
+        margin: 6px 0;
+      }
+
+      .nav-list li a {
+        color: white;
+        font-size: 18px;
+      }
+
+      .navbar select {
+        max-width: 130px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">
-    <h1>Amathea Imperial</h1>
-  </div>
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="logo">
+      <h1>Amathea Imperial</h1>
+    </div>
 
-  <nav class="navbar" style="display:flex; align-items:center; justify-content:space-between;">
-    <div class="menu-toggle" id="mobile-menu">☰</div>
+    <nav class="navbar">
+      <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">☰</button>
 
-    <ul class="nav-list" style="display:flex; gap:20px; list-style:none;">
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#quienes-somos">Quiénes Somos</a></li>
-      <li><a href="#fotos">Fotos</a></li>
-      <li><a href="#ubicacion">Ubicación</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#quienes-somos">Quiénes Somos</a></li>
+        <li><a href="#fotos">Fotos</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
 
-    <select onchange="location = this.value;">
-      <option value="index.html" selected>🌐 Español</option>
-      <option value="index-en.html">🇬🇧 English</option>
-    </select>
-  </nav>
-</header>
+      <select onchange="location = this.value;" style="padding: 8px; border-radius: 5px;">
+        <option value="index.html" selected>🌐 Español</option>
+        <option value="index-en.html">🇬🇧 English</option>
+      </select>
+    </nav>
+  </header>
 
-<main>
+  <!-- ========== INICIO ========== -->
+  <main>
+    <section id="inicio" class="seccion">
+      <h2>Bienvenido a Amathea Imperial</h2>
+      <h3>Alquila uno de nuestros apartamentos exclusivos y disfruta del máximo confort y seguridad.</h3>
+    </section>
 
-<section id="inicio" class="seccion">
-  <h2>Bienvenido a Amathea Imperial</h2>
-  <h3>Alquila uno de nuestros apartamentos exclusivos y disfruta del máximo confort y seguridad.</h3>
-</section>
+    <!-- Logo -->
+    <section class="seccion">
+      <h2>Amathea Imperial S.A.S</h2>
+      <div style="text-align:center;">
+        <img src="logo_actual.png" width="200" alt="Amathea Imperial Logo" />
+      </div>
+    </section>
 
-<section class="seccion">
-  <h2>Amathea Imperial S.A.S</h2>
-  <div style="text-align:center;">
-    <img src="logo_actual.png" width="200" alt="Logo" />
-  </div>
-</section>
+    <!-- Quiénes Somos -->
+    <section id="quienes-somos" class="seccion">
+      <h2>Quiénes Somos</h2>
+      <p>
+        AMATHEA IMPERIAL S.A.S. es una empresa dedicada a ofrecer servicios de hospedaje de corta estancia 
+        con altos estándares de calidad, atención y profesionalismo. Disponemos de dos apartamentos de lujo, 
+        completamente equipados, diseñados para ofrecer elegancia, privacidad y confort.  
+        <br><br>
+        Nos caracteriza la amabilidad, discreción y compromiso hacia cada huésped. Nuestro objetivo es brindar 
+        una experiencia memorable, adaptada tanto para descanso como trabajo o turismo.
+      </p>
+    </section>
 
-<section id="quienes-somos" class="seccion">
-  <h2>Quiénes Somos</h2>
-  <p>
-    AMATHEA IMPERIAL S.A.S. ofrece hospedaje de corta estancia con altos estándares de calidad.
-    Disponemos de apartamentos de lujo diseñados para confort, privacidad y elegancia.
-  </p>
-</section>
+    <!-- Apartamentos -->
+    <section class="seccion">
+      <h2>Nuestros Apartamentos</h2>
 
-<section class="seccion">
-  <h2>Nuestros Apartamentos</h2>
+      <div class="piso">
+        <h3>Apartamento A</h3>
+        <img src="foto%20%60piso%20A.jpg" width="680" height="400" alt="Apartamento A" />
+        <p>Apartamento con dos habitaciones, cama matrimonial, sofá-cama, dos baños y capacidad para 5 personas.</p>
+        <a href="http://airbnb.com/h/amatheaimperialsasapartamentob" class="boton-rojo">Reserva vía Airbnb</a><br>
+        <a href="https://www.booking.com/hotel/ec/amathea-imperial.es.html" class="boton-azul">Reserva vía Booking</a>
+      </div>
 
-  <div class="piso">
-    <h3>Apartamento A</h3>
-    <img src="foto `piso A.jpg" width="680" height="400" alt="Apartamento A" />
-    <p>Apartamento con dos habitaciones, cama matrimonial, sofá-cama, dos baños y capacidad para 5 personas.</p>
-    <a href="http://airbnb.com/h/amatheaimperialsasapartamentoa" class="boton-rojo">Reserva vía Airbnb</a><br>
-    <a href="https://www.booking.com/hotel/ec/amathea-imperial.es.html" class="boton-azul">Reserva vía Booking</a>
-  </div>
+      <div class="piso">
+        <h3>Apartamento B</h3>
+        <img src="PIsoB.jpg" width="680" height="400" alt="Apartamento B" />
+        <p>Apartamento de una habitación con cama doble, sofá-cama, un baño y capacidad para 3 personas.</p>
+        <a href="http://airbnb.com/h/amatheaimperialsasapartamentoa" class="boton-rojo">Reserva vía Airbnb</a><br>
+        <a href="https://www.booking.com/hotel/ec/amathea-imperial.es.html" class="boton-azul">Reserva vía Booking</a>
+      </div>
+    </section>
 
-  <div class="piso">
-    <h3>Apartamento B</h3>
-    <img src="PisoB.jpg" width="680" height="400" alt="Apartamento B" />
-    <p>Apartamento de una habitación con cama doble, sofá-cama, un baño y capacidad para 3 personas.</p>
-    <a href="http://airbnb.com/h/amatheaimperialsasapartamentob" class="boton-rojo">Reserva vía Airbnb</a><br>
-    <a href="https://www.booking.com/hotel/ec/amathea-imperial.es.html" class="boton-azul">Reserva vía Booking</a>
-  </div>
+    <!-- Fotos -->
+    <section id="fotos" class="seccion">
+      <h2>Fotos</h2>
+      <div class="galeria-collage">
+        <img src="foto%20%60piso%20A.jpg" alt="Foto A" />
+        <img src="foto%20entrada%20.jpg" alt="Entrada" />
+        <img src="PIsoB.jpg" alt="Apartamento B" />
+        <img src="fachada.jpg" alt="Fachada" />
+      </div>
+    </section>
 
-</section>
+    <!-- Video Instagram -->
+    <section class="seccion" style="text-align:center;">
+      <h2>📍 Cómo Llegar</h2>
 
-<section id="fotos" class="seccion">
-  <h2>Fotos</h2>
-  <div class="galeria-collage">
-    <img src="foto `piso A.jpg" alt="Foto A" />
-    <img src="foto entrada .jpg" alt="Entrada" />
-    <img src="PisoB.jpg" alt="Apartamento B" />
-    <img src="fachada.jpg" alt="Fachada" />
-  </div>
-</section>
+      <div style="max-width:400px; margin:auto;">
+        <blockquote class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/reel/DPgRsqDjqDq/"
+          data-instgrm-version="14"
+          style="margin:auto; width:100%; max-width:400px;">
+        </blockquote>
+      </div>
 
-<section class="seccion" style="text-align:center;">
-  <h2>📍 Cómo Llegar</h2>
+      <script async src="https://www.instagram.com/embed.js"></script>
+    </section>
 
-  <div style="max-width:400px; margin:auto;">
-    <blockquote class="instagram-media"
-      data-instgrm-permalink="https://www.instagram.com/reel/DPgRsqDjqDq/"
-      data-instgrm-version="14">
-    </blockquote>
-  </div>
+    <!-- Ubicación -->
+    <section id="ubicacion" class="seccion">
+      <h2>Ubicación</h2>
+      <h3>Urbanización Privada El Sol, Machala – Ecuador</h3>
 
-  <script async src="https://www.instagram.com/embed.js"></script>
-</section>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Urbanización+Privada+El+Sol+Machala+Ecuador"
+         class="boton-azul"
+         style="display:block; width:250px; margin:20px auto; text-align:center;">
+        📍 Cómo llegar
+      </a>
 
-<section id="ubicacion" class="seccion">
-  <h2>Ubicación</h2>
-  <h3>Urbanización Privada El Sol, Machala – Ecuador</h3>
+      <iframe
+        src="https://www.google.com/maps?q=Urbanización%20Privada%20El%20Sol%20Machala%20Ecuador&output=embed"
+        width="100%"
+        height="450"
+        style="border-radius:10px; border:0;"
+        allowfullscreen
+        loading="lazy"></iframe>
+    </section>
 
-  <a href="https://www.google.com/maps/dir/?api=1&destination=Urbanización+Privada+El+Sol+Machala+Ecuador"
-     class="boton-azul"
-     style="display:block; width:250px; margin:20px auto; text-align:center;">
-    📍 Cómo llegar
-  </a>
+    <!-- CONTACTO -->
+    <section id="contacto" class="seccion" style="padding: 60px 20px; text-align: center;">
+      
+      <h2 style="font-size: 32px; margin-bottom: 10px; color:#0a2647;">
+        Contacto
+      </h2>
 
-  <iframe
-    src="https://www.google.com/maps?q=Urbanización%20Privada%20El%20Sol%20Machala%20Ecuador&output=embed"
-    width="100%"
-    height="450"
-    style="border-radius:10px; border:0;"
-    allowfullscreen
-    loading="lazy">
-  </iframe>
-</section>
+      <div style="width: 60px; height: 3px; background:#0a2647; margin: 0 auto 30px auto; border-radius: 2px;"></div>
 
-<section id="contacto" class="seccion" style="padding: 60px 20px; text-align: center;">
-  
-  <h2 style="color:#0a2647;">Contacto</h2>
+      <div style="
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 25px 35px;
+          background: rgba(255, 255, 255, 0.55);
+          backdrop-filter: blur(6px);
+          border-radius: 12px;
+          box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+          text-align: left;
+          line-height: 1.7;
+          color: #333;
+      ">
 
-  <div style="max-width:600px; margin:auto; text-align:left;">
+        <p><strong style="color:#0a2647;">Nombre</strong><br>
+          Amathea Imperial
+        </p>
 
-    <p><strong>Nombre</strong><br>Amathea Imperial</p>
+        <p><strong style="color:#0a2647;">Email</strong><br>
+          <a href="mailto:info@amatheaimperialsas.com" 
+             style="color:#0a2647; text-decoration:none; font-weight:500;">
+             info@amatheaimperialsas.com
+          </a>
+        </p>
 
-    <p><strong>Email</strong><br>
-      <a href="mailto:info@amatheaimperialsas.com">info@amatheaimperialsas.com</a>
-    </p>
+        <p><strong style="color:#0a2647;">Teléfono</strong><br>
+          <a href="tel:+593989114500" 
+             style="color:#0a2647; text-decoration:none; font-weight:500;">
+             📞 +593 989 114 500
+          </a><br>
 
-    <p><strong>Teléfono</strong><br>
-      <a href="tel:+593989114500">📞 +593 989 114 500</a><br>
-      <a href="tel:+593968701003">📞 +593 968 701 003</a>
-    </p>
+          <a href="tel:+593968701003" 
+             style="color:#0a2647; text-decoration:none; font-weight:500;">
+             📞 +593 968 701 003
+          </a>
+        </p>
 
-    <p><strong>WhatsApp</strong><br>
-      <a href="https://wa.me/34618939220" target="_blank">💬 +34 618 939 220</a><br>
-      <a href="https://wa.me/34660184759" target="_blank">💬 +34 660 184 759</a>
-    </p>
+        <p><strong style="color:#0a2647;">WhatsApp</strong><br>
 
-    <p><strong>Mensaje</strong><br>
-      Estamos disponibles 24/7 para atenderle.
-    </p>
+          <a href="https://wa.me/34618939220" target="_blank" 
+             style="color:#0a2647; text-decoration:none; font-weight:500;">
+             💬 +34 618 939 220
+          </a><br>
 
-  </div>
-</section>
+          <a href="https://wa.me/34660184759" target="_blank" 
+             style="color:#0a2647; text-decoration:none; font-weight:500;">
+             💬 +34 660 184 759
+          </a>
 
-<footer>
-  <p>&copy; 2026 Amathea Imperial S.A.S. Todos los derechos reservados.</p>
-</footer>
+        </p>
 
-<script src="script.js"></script>
+        <p><strong style="color:#0a2647;">Mensaje</strong><br>
+          Para cualquier consulta estaremos encantados de atenderle vía WhatsApp, email o llamada telefónica las 24 horas.
+        </p>
+
+      </div>
+
+      <div style="margin-top: 25px;">
+        
+        <a href="tel:+593989114500"
+           style="
+            display:inline-block;
+            padding:10px 22px;
+            border-radius:8px;
+            border:1px solid #0a2647;
+            color:#0a2647;
+            text-decoration:none;
+            margin:8px;
+            transition:0.3s;
+           "
+           onmouseover="this.style.backgroundColor='#0a2647'; this.style.color='white';"
+           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#0a2647';">
+          📞 Llamar
+        </a>
+
+        <a href="https://wa.me/593989114500" target="_blank"
+           style="
+            display:inline-block;
+            padding:10px 22px;
+            border-radius:8px;
+            border:1px solid #25D366;
+            color:#25D366;
+            text-decoration:none;
+            margin:8px;
+            transition:0.3s;
+           "
+           onmouseover="this.style.backgroundColor='#25D366'; this.style.color='white';"
+           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#25D366';">
+          💬 WhatsApp
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Redes Sociales -->
+    <div style="text-align: center; margin: 50px 0 20px 0;">
+      <h3 style="color:#0a2647; font-size:22px;">Síguenos en redes sociales</h3>
+
+      <div style="margin-top: 15px;">
+
+        <a href="https://www.instagram.com/amatheaimperial?igsh=MW4zY2V4emJtM216bQ%3D%3D&utm_source=qr" 
+           target="_blank" 
+           style="margin: 0 15px; display:inline-block;">
+          <img 
+            src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
+            alt="Instagram"
+            width="38"
+            height="38"
+            style="filter: invert(26%) sepia(73%) saturate(590%) hue-rotate(316deg) brightness(96%) contrast(91%);">
+        </a>
+
+        <a href="https://www.facebook.com/profile.php?id=61580272500947" 
+           target="_blank"
+           style="margin: 0 15px; display:inline-block;">
+          <img 
+            src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
+            alt="Facebook"
+            width="38"
+            height="38"
+            style="filter: invert(21%) sepia(65%) saturate(720%) hue-rotate(185deg) brightness(95%) contrast(95%);">
+        </a>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Amathea Imperial S.A.S. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+
+    mobileMenuButton.addEventListener('click', function () {
+      navList.classList.toggle('active');
+    });
+
+    document.querySelectorAll('#nav-list a').forEach(link => {
+      link.addEventListener('click', function () {
+        navList.classList.remove('active');
+      });
+    });
+
+    document.addEventListener('click', function (e) {
+      const clickedInsideMenu = navList.contains(e.target);
+      const clickedButton = mobileMenuButton.contains(e.target);
+
+      if (!clickedInsideMenu && !clickedButton) {
+        navList.classList.remove('active');
+      }
+    });
+  </script>
 
 </body>
 </html>
