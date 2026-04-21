@@ -3,409 +3,155 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="format-detection" content="telephone=yes">
   <title>Amathea Imperial S.A.S</title>
   <link rel="stylesheet" href="styles.css" />
-
-  <style>
-    .mobile-sticky-bar {
-      display: none;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: #ffffff;
-      box-shadow: 0 -4px 14px rgba(0,0,0,0.12);
-      padding: 10px 12px;
-      z-index: 9999;
-      box-sizing: border-box;
-    }
-
-    .mobile-sticky-bar .mobile-actions {
-      display: flex;
-      gap: 10px;
-    }
-
-    .mobile-sticky-bar a {
-      flex: 1;
-      text-align: center;
-      text-decoration: none;
-      padding: 12px 10px;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 15px;
-    }
-
-    .mobile-call-btn {
-      background: #0a2647;
-      color: #fff;
-    }
-
-    .mobile-wa-btn {
-      background: #25D366;
-      color: #fff;
-    }
-
-    body.mobile-user {
-      padding-bottom: 85px;
-    }
-
-    .boton-contacto {
-      display: inline-block;
-      padding: 10px 22px;
-      border-radius: 8px;
-      text-decoration: none;
-      margin: 8px;
-      transition: 0.3s;
-      font-weight: 500;
-    }
-
-    .boton-llamar {
-      border: 1px solid #0a2647;
-      color: #0a2647;
-    }
-
-    .boton-llamar:hover {
-      background-color: #0a2647;
-      color: white;
-    }
-
-    .boton-whatsapp {
-      border: 1px solid #25D366;
-      color: #25D366;
-    }
-
-    .boton-whatsapp:hover {
-      background-color: #25D366;
-      color: white;
-    }
-
-    @media (max-width: 768px) {
-      .mobile-sticky-bar.show {
-        display: block;
-      }
-
-      .nav-list {
-        gap: 12px !important;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .piso img,
-      .galeria-collage img {
-        width: 100% !important;
-        height: auto !important;
-      }
-
-      iframe {
-        height: 320px !important;
-      }
-
-      #contacto .contact-card {
-        padding: 20px !important;
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-  <!-- ========== HEADER ========== -->
-  <header>
-    <div class="logo">
-      <h1>Amathea Imperial</h1>
-    </div>
-
-    <nav class="navbar" style="display:flex; align-items:center; justify-content:space-between; gap:15px; flex-wrap:wrap;">
-      <div class="menu-toggle" id="mobile-menu">☰</div>
-
-      <ul class="nav-list" style="display:flex; gap:20px; list-style:none; margin:0; padding:0;">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#quienes-somos">Quiénes Somos</a></li>
-        <li><a href="#fotos">Fotos</a></li>
-        <li><a href="#ubicacion">Ubicación</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-
-      <select onchange="location = this.value;" style="padding: 8px; border-radius: 5px;">
-        <option value="index.html" selected>🌐 Español</option>
-        <option value="index-en.html">🇬🇧 English</option>
-      </select>
-    </nav>
-  </header>
-
-  <!-- ========== INICIO ========== -->
-  <main>
-    <section id="inicio" class="seccion">
-      <h2>Bienvenido a Amathea Imperial</h2>
-      <h3>Alquila uno de nuestros apartamentos exclusivos y disfruta del máximo confort y seguridad.</h3>
-    </section>
-
-    <!-- Logo -->
-    <section class="seccion">
-      <h2>Amathea Imperial S.A.S</h2>
-      <div style="text-align:center;">
-        <img src="logo_actual.png" width="200" alt="Amathea Imperial Logo" />
-      </div>
-    </section>
-
-    <!-- Quiénes Somos -->
-    <section id="quienes-somos" class="seccion">
-      <h2>Quiénes Somos</h2>
-      <p>
-        AMATHEA IMPERIAL S.A.S. es una empresa dedicada a ofrecer servicios de hospedaje de corta estancia 
-        con altos estándares de calidad, atención y profesionalismo. Disponemos de dos apartamentos de lujo, 
-        completamente equipados, diseñados para ofrecer elegancia, privacidad y confort.  
-        <br><br>
-        Nos caracteriza la amabilidad, discreción y compromiso hacia cada huésped. Nuestro objetivo es brindar 
-        una experiencia memorable, adaptada tanto para descanso como trabajo o turismo.
-      </p>
-    </section>
-
-    <!-- Apartamentos -->
-    <section class="seccion">
-      <h2>Nuestros Apartamentos</h2>
-
-      <div class="piso">
-        <h3>Apartamento A</h3>
-        <img src="foto-piso-a.jpg" width="680" height="400" alt="Apartamento A" />
-        <p>Apartamento con dos habitaciones, cama matrimonial, sofá-cama, dos baños y capacidad para 5 personas.</p>
-        <a href="http://airbnb.com/h/amatheaimperialsasapartamentoa" class="boton-rojo" target="_blank" rel="noopener noreferrer">Reserva vía Airbnb</a><br>
-        <a href="https://www.booking.com/hotel/ec/amathea-imperial.es.html" class="boton-azul" target="_blank" rel="noopener noreferrer">Reserva vía Booking</a>
-      </div>
-
-      <div class="piso">
-        <h3>Apartamento B</h3>
-        <img src="piso-b.jpg" width="680" height="400" alt="Apartamento B" />
-        <p>Apartamento de una habitación con cama doble, sofá-cama, un baño y capacidad para 3 personas.</p>
-        <a href="http://airbnb.com/h/amatheaimperialsasapartamentob" class="boton-rojo" target="_blank" rel="noopener noreferrer">Reserva vía Airbnb</a><br>
-        <a href="https://www.booking.com/hotel/ec/amathea-imperial.es.html" class="boton-azul" target="_blank" rel="noopener noreferrer">Reserva vía Booking</a>
-      </div>
-    </section>
-
-    <!-- Fotos -->
-    <section id="fotos" class="seccion">
-      <h2>Fotos</h2>
-      <div class="galeria-collage">
-        <img src="foto-piso-a.jpg" alt="Foto A" />
-        <img src="foto-entrada.jpg" alt="Entrada" />
-        <img src="piso-b.jpg" alt="Apartamento B" />
-        <img src="fachada.jpg" alt="Fachada" />
-      </div>
-    </section>
-
-    <!-- Video Instagram -->
-    <section class="seccion" style="text-align:center;">
-      <h2>📍 Cómo Llegar</h2>
-
-      <div style="max-width:400px; margin:auto;">
-        <blockquote class="instagram-media"
-          data-instgrm-permalink="https://www.instagram.com/reel/DPgRsqDjqDq/"
-          data-instgrm-version="14"
-          style="margin:auto; width:100%; max-width:400px;">
-        </blockquote>
-      </div>
-
-      <script async src="https://www.instagram.com/embed.js"></script>
-    </section>
-
-    <!-- Ubicación -->
-    <section id="ubicacion" class="seccion">
-      <h2>Ubicación</h2>
-      <h3>Urbanización Privada El Sol, Machala – Ecuador</h3>
-
-      <a href="https://www.google.com/maps/dir/?api=1&destination=Urbanización+Privada+El+Sol+Machala+Ecuador"
-         class="boton-azul"
-         target="_blank"
-         rel="noopener noreferrer"
-         style="display:block; width:250px; margin:20px auto; text-align:center;">
-        📍 Cómo llegar
-      </a>
-
-      <iframe
-        src="https://www.google.com/maps?q=Urbanización%20Privada%20El%20Sol%20Machala%20Ecuador&output=embed"
-        width="100%"
-        height="450"
-        style="border-radius:10px; border:0;"
-        allowfullscreen
-        loading="lazy"></iframe>
-    </section>
-
-    <!-- CONTACTO -->
-    <section id="contacto" class="seccion" style="padding: 60px 20px; text-align: center;">
-      
-      <h2 style="font-size: 32px; margin-bottom: 10px; color:#0a2647;">
-        Contacto
-      </h2>
-
-      <div style="width: 60px; height: 3px; background:#0a2647; margin: 0 auto 30px auto; border-radius: 2px;"></div>
-
-      <div class="contact-card" style="
-          max-width: 600px;
-          margin: 0 auto;
-          padding: 25px 35px;
-          background: rgba(255, 255, 255, 0.55);
-          backdrop-filter: blur(6px);
-          border-radius: 12px;
-          box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-          text-align: left;
-          line-height: 1.7;
-          color: #333;
-      ">
-
-        <p><strong style="color:#0a2647;">Nombre</strong><br>
-          Amathea Imperial
-        </p>
-
-        <p><strong style="color:#0a2647;">Email</strong><br>
-          <a href="mailto:info@amatheaimperialsas.com" 
-             style="color:#0a2647; text-decoration:none; font-weight:500;">
-             info@amatheaimperialsas.com
-          </a>
-        </p>
-
-        <p><strong style="color:#0a2647;">Teléfono</strong><br>
-          <a href="tel:+593989114500" 
-             style="color:#0a2647; text-decoration:none; font-weight:500;">
-             📞 +593 989 114 500
-          </a><br>
-
-          <a href="tel:+593968701003" 
-             style="color:#0a2647; text-decoration:none; font-weight:500;">
-             📞 +593 968 701 003
-          </a>
-        </p>
-
-        <p><strong style="color:#0a2647;">WhatsApp</strong><br>
-
-          <a href="https://wa.me/593968701003" target="_blank" rel="noopener noreferrer"
-             style="color:#0a2647; text-decoration:none; font-weight:500;">
-             💬 +593 968 701 003
-          </a><br>
-
-          <a href="https://wa.me/34618939220" target="_blank" rel="noopener noreferrer"
-             style="color:#0a2647; text-decoration:none; font-weight:500;">
-             💬 +34 618 939 220
-          </a><br>
-
-          <a href="https://wa.me/34660184759" target="_blank" rel="noopener noreferrer"
-             style="color:#0a2647; text-decoration:none; font-weight:500;">
-             💬 +34 660 184 759
-          </a>
-
-        </p>
-
-        <p><strong style="color:#0a2647;">Mensaje</strong><br>
-          Para cualquier consulta estaremos encantados de atenderle vía WhatsApp, email o llamada telefónica las 24 horas.
-        </p>
-
-      </div>
-
-      <!-- Botones -->
-      <div style="margin-top: 25px;">
-        
-        <a href="tel:+593989114500"
-           class="boton-contacto boton-llamar cta-call-main">
-          📞 Llamar Ecuador
-        </a>
-
-        <a href="https://wa.me/593989114500" target="_blank" rel="noopener noreferrer"
-           class="boton-contacto boton-whatsapp">
-          💬 WhatsApp Ecuador
-        </a>
-
-        <a href="https://wa.me/593968701003" target="_blank" rel="noopener noreferrer"
-           class="boton-contacto boton-whatsapp cta-wa-main">
-          💬 WhatsApp +593 968 701 003
-        </a>
-
-      </div>
-    </section>
-
-    <!-- Redes Sociales -->
-    <div style="text-align: center; margin: 50px 0 20px 0;">
-      <h3 style="color:#0a2647; font-size:22px;">Síguenos en redes sociales</h3>
-
-      <div style="margin-top: 15px;">
-
-        <a href="https://www.instagram.com/amatheaimperial?igsh=MW4zY2V4emJtM216bQ%3D%3D&utm_source=qr" 
-           target="_blank" rel="noopener noreferrer"
-           style="margin: 0 15px; display:inline-block;">
-          <img 
-            src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
-            alt="Instagram"
-            width="38"
-            height="38"
-            style="filter: invert(26%) sepia(73%) saturate(590%) hue-rotate(316deg) brightness(96%) contrast(91%);">
-        </a>
-
-        <a href="https://www.facebook.com/profile.php?id=61580272500947" 
-           target="_blank" rel="noopener noreferrer"
-           style="margin: 0 15px; display:inline-block;">
-          <img 
-            src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
-            alt="Facebook"
-            width="38"
-            height="38"
-            style="filter: invert(21%) sepia(65%) saturate(720%) hue-rotate(185deg) brightness(95%) contrast(95%);">
-        </a>
-
-      </div>
-    </div>
-
-  </main>
-
-  <!-- Barra fija móvil -->
-  <div class="mobile-sticky-bar" id="mobileStickyBar">
-    <div class="mobile-actions">
-      <a href="tel:+593989114500" class="mobile-call-btn" id="mobileCallBtn">📞 Llamar</a>
-      <a href="https://wa.me/593968701003" target="_blank" rel="noopener noreferrer" class="mobile-wa-btn" id="mobileWaBtn">💬 WhatsApp</a>
-    </div>
+<header>
+  <div class="logo">
+    <h1>Amathea Imperial</h1>
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2026 Amathea Imperial S.A.S. Todos los derechos reservados.</p>
-  </footer>
+  <nav class="navbar" style="display:flex; align-items:center; justify-content:space-between;">
+    <div class="menu-toggle" id="mobile-menu">☰</div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const isMobile =
-        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
-        window.innerWidth <= 768;
+    <ul class="nav-list" style="display:flex; gap:20px; list-style:none;">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#quienes-somos">Quiénes Somos</a></li>
+      <li><a href="#fotos">Fotos</a></li>
+      <li><a href="#ubicacion">Ubicación</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
 
-      const body = document.body;
-      const stickyBar = document.getElementById("mobileStickyBar");
-      const mobileCallBtn = document.getElementById("mobileCallBtn");
-      const mobileWaBtn = document.getElementById("mobileWaBtn");
-      const mainCallBtn = document.querySelector(".cta-call-main");
-      const mainWaBtn = document.querySelector(".cta-wa-main");
+    <select onchange="location = this.value;">
+      <option value="index.html" selected>🌐 Español</option>
+      <option value="index-en.html">🇬🇧 English</option>
+    </select>
+  </nav>
+</header>
 
-      if (isMobile) {
-        body.classList.add("mobile-user");
-        stickyBar.classList.add("show");
+<main>
 
-        if (mainCallBtn) {
-          mainCallBtn.textContent = "📞 Llamar ahora";
-        }
+<section id="inicio" class="seccion">
+  <h2>Bienvenido a Amathea Imperial</h2>
+  <h3>Alquila uno de nuestros apartamentos exclusivos y disfruta del máximo confort y seguridad.</h3>
+</section>
 
-        if (mainWaBtn) {
-          mainWaBtn.textContent = "💬 WhatsApp inmediato";
-        }
+<section class="seccion">
+  <h2>Amathea Imperial S.A.S</h2>
+  <div style="text-align:center;">
+    <img src="logo_actual.png" width="200" alt="Logo" />
+  </div>
+</section>
 
-        if (mobileCallBtn) {
-          mobileCallBtn.setAttribute("href", "tel:+593989114500");
-        }
+<section id="quienes-somos" class="seccion">
+  <h2>Quiénes Somos</h2>
+  <p>
+    AMATHEA IMPERIAL S.A.S. ofrece hospedaje de corta estancia con altos estándares de calidad.
+    Disponemos de apartamentos de lujo diseñados para confort, privacidad y elegancia.
+  </p>
+</section>
 
-        if (mobileWaBtn) {
-          mobileWaBtn.setAttribute("href", "https://wa.me/593968701003");
-        }
-      } else {
-        body.classList.add("desktop-user");
-      }
-    });
-  </script>
+<section class="seccion">
+  <h2>Nuestros Apartamentos</h2>
 
-  <script src="script.js"></script>
+  <div class="piso">
+    <h3>Apartamento A</h3>
+    <img src="foto `piso A.jpg" width="680" height="400" alt="Apartamento A" />
+    <p>Apartamento con dos habitaciones, cama matrimonial, sofá-cama, dos baños y capacidad para 5 personas.</p>
+    <a href="http://airbnb.com/h/amatheaimperialsasapartamentoa" class="boton-rojo">Reserva vía Airbnb</a><br>
+    <a href="https://www.booking.com/hotel/ec/amathea-imperial.es.html" class="boton-azul">Reserva vía Booking</a>
+  </div>
+
+  <div class="piso">
+    <h3>Apartamento B</h3>
+    <img src="PisoB.jpg" width="680" height="400" alt="Apartamento B" />
+    <p>Apartamento de una habitación con cama doble, sofá-cama, un baño y capacidad para 3 personas.</p>
+    <a href="http://airbnb.com/h/amatheaimperialsasapartamentob" class="boton-rojo">Reserva vía Airbnb</a><br>
+    <a href="https://www.booking.com/hotel/ec/amathea-imperial.es.html" class="boton-azul">Reserva vía Booking</a>
+  </div>
+
+</section>
+
+<section id="fotos" class="seccion">
+  <h2>Fotos</h2>
+  <div class="galeria-collage">
+    <img src="foto `piso A.jpg" alt="Foto A" />
+    <img src="foto entrada .jpg" alt="Entrada" />
+    <img src="PisoB.jpg" alt="Apartamento B" />
+    <img src="fachada.jpg" alt="Fachada" />
+  </div>
+</section>
+
+<section class="seccion" style="text-align:center;">
+  <h2>📍 Cómo Llegar</h2>
+
+  <div style="max-width:400px; margin:auto;">
+    <blockquote class="instagram-media"
+      data-instgrm-permalink="https://www.instagram.com/reel/DPgRsqDjqDq/"
+      data-instgrm-version="14">
+    </blockquote>
+  </div>
+
+  <script async src="https://www.instagram.com/embed.js"></script>
+</section>
+
+<section id="ubicacion" class="seccion">
+  <h2>Ubicación</h2>
+  <h3>Urbanización Privada El Sol, Machala – Ecuador</h3>
+
+  <a href="https://www.google.com/maps/dir/?api=1&destination=Urbanización+Privada+El+Sol+Machala+Ecuador"
+     class="boton-azul"
+     style="display:block; width:250px; margin:20px auto; text-align:center;">
+    📍 Cómo llegar
+  </a>
+
+  <iframe
+    src="https://www.google.com/maps?q=Urbanización%20Privada%20El%20Sol%20Machala%20Ecuador&output=embed"
+    width="100%"
+    height="450"
+    style="border-radius:10px; border:0;"
+    allowfullscreen
+    loading="lazy">
+  </iframe>
+</section>
+
+<section id="contacto" class="seccion" style="padding: 60px 20px; text-align: center;">
+  
+  <h2 style="color:#0a2647;">Contacto</h2>
+
+  <div style="max-width:600px; margin:auto; text-align:left;">
+
+    <p><strong>Nombre</strong><br>Amathea Imperial</p>
+
+    <p><strong>Email</strong><br>
+      <a href="mailto:info@amatheaimperialsas.com">info@amatheaimperialsas.com</a>
+    </p>
+
+    <p><strong>Teléfono</strong><br>
+      <a href="tel:+593989114500">📞 +593 989 114 500</a><br>
+      <a href="tel:+593968701003">📞 +593 968 701 003</a>
+    </p>
+
+    <p><strong>WhatsApp</strong><br>
+      <a href="https://wa.me/34618939220" target="_blank">💬 +34 618 939 220</a><br>
+      <a href="https://wa.me/34660184759" target="_blank">💬 +34 660 184 759</a>
+    </p>
+
+    <p><strong>Mensaje</strong><br>
+      Estamos disponibles 24/7 para atenderle.
+    </p>
+
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Amathea Imperial S.A.S. Todos los derechos reservados.</p>
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
