@@ -6,6 +6,224 @@
   <meta name="description" content="Amathea Imperial S.A.S. offers exclusive short-stay apartments in Machala, Ecuador, with comfort, privacy, and security." />
   <title>Amathea Imperial S.A.S.</title>
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* CONTACT BUTTONS VISUAL ENHANCEMENTS */
+    .acciones-contacto {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .btn-contacto {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-width: 190px;
+      padding: 14px 26px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.2px;
+      overflow: hidden;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.14);
+      border: 1px solid rgba(255,255,255,0.25);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-contacto::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 60%;
+      height: 100%;
+      transform: skewX(-25deg);
+      background: linear-gradient(
+        90deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.28) 50%,
+        rgba(255,255,255,0) 100%
+      );
+      transition: left 0.55s ease;
+    }
+
+    .btn-contacto:hover::before {
+      left: 140%;
+    }
+
+    .btn-contacto:hover {
+      transform: translateY(-4px) scale(1.03);
+      filter: brightness(1.03);
+    }
+
+    .btn-contacto:active {
+      transform: translateY(-1px) scale(0.99);
+    }
+
+    .btn-llamar {
+      color: #ffffff;
+      background: linear-gradient(135deg, #1e6ad6 0%, #0a4fb5 100%);
+      box-shadow: 0 12px 24px rgba(10, 95, 208, 0.28);
+    }
+
+    .btn-llamar:hover {
+      box-shadow: 0 16px 28px rgba(10, 95, 208, 0.38);
+    }
+
+    .btn-whatsapp {
+      color: #ffffff;
+      background: linear-gradient(135deg, #25d366 0%, #128c4a 100%);
+      box-shadow: 0 12px 24px rgba(37, 211, 102, 0.28);
+    }
+
+    .btn-whatsapp:hover {
+      box-shadow: 0 16px 28px rgba(37, 211, 102, 0.38);
+    }
+
+    .btn-icono {
+      font-size: 1.05rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* PREMIUM SOCIAL MEDIA */
+    .redes-sociales {
+      text-align: center;
+      margin: 70px 0 35px 0;
+      padding: 0 20px;
+    }
+
+    .redes-sociales h3 {
+      color: #0a2647;
+      font-size: 24px;
+      margin-bottom: 24px;
+      font-weight: 700;
+    }
+
+    .iconos-redes {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.94);
+      text-decoration: none;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-link::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      opacity: 0;
+      transform: scale(0.75);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .social-link:hover {
+      transform: translateY(-7px) scale(1.08);
+      box-shadow: 0 18px 30px rgba(0,0,0,0.18);
+      background: #ffffff;
+    }
+
+    .social-link:hover::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .social-link img {
+      width: 32px;
+      height: 32px;
+      transition: transform 0.35s ease, filter 0.35s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    .social-link:hover img {
+      transform: scale(1.12) rotate(-4deg);
+    }
+
+    .instagram-link img {
+      filter: invert(35%) sepia(78%) saturate(1540%) hue-rotate(315deg) brightness(95%) contrast(92%);
+    }
+
+    .instagram-link::after {
+      background: radial-gradient(circle, rgba(225,48,108,0.12) 0%, rgba(245,96,64,0.08) 45%, rgba(252,175,69,0.04) 100%);
+    }
+
+    .facebook-link img {
+      filter: invert(32%) sepia(97%) saturate(1261%) hue-rotate(203deg) brightness(93%) contrast(96%);
+    }
+
+    .facebook-link::after {
+      background: radial-gradient(circle, rgba(24,119,242,0.16) 0%, rgba(24,119,242,0.05) 100%);
+    }
+
+    .tiktok-link img {
+      filter: invert(18%) sepia(9%) saturate(1037%) hue-rotate(177deg) brightness(94%) contrast(93%);
+    }
+
+    .tiktok-link::after {
+      background:
+        radial-gradient(circle at 35% 35%, rgba(37,244,238,0.16) 0%, rgba(37,244,238,0.04) 35%, transparent 60%),
+        radial-gradient(circle at 65% 65%, rgba(254,44,85,0.14) 0%, rgba(254,44,85,0.04) 35%, transparent 60%);
+    }
+
+    @media (max-width: 768px) {
+      .acciones-contacto {
+        gap: 14px;
+      }
+
+      .btn-contacto {
+        min-width: 170px;
+        padding: 13px 22px;
+        font-size: 0.96rem;
+      }
+
+      .social-link {
+        width: 62px;
+        height: 62px;
+      }
+
+      .social-link img {
+        width: 29px;
+        height: 29px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .acciones-contacto {
+        flex-direction: column;
+      }
+
+      .btn-contacto {
+        width: 100%;
+        max-width: 320px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -50,13 +268,13 @@
       <h2>About Us</h2>
       <p>
         AMATHEA IMPERIAL S.A.S. is a company dedicated to offering short-stay accommodation services
-        with high standards of quality, care, and professionalism. We offer two luxury apartments,
+        with high standards of quality, care, and professionalism. We have two luxury apartments,
         fully equipped and designed to provide elegance, privacy, and comfort.
       </p>
       <br />
       <p>
         We are known for our kindness, discretion, and commitment to every guest. Our goal is to provide
-        a memorable experience, whether for rest, work, or tourism.
+        a memorable experience tailored for rest, work, or tourism.
       </p>
     </section>
 
@@ -67,7 +285,7 @@
         <h3>Apartment A</h3>
         <img src="foto%20%60piso%20A.jpg" alt="Apartment A" />
         <p>
-          Apartment with two bedrooms, a double bed, sofa bed, two bathrooms, and capacity for 5 guests.
+          Apartment with two bedrooms, double bed, sofa bed, two bathrooms, and capacity for 5 guests.
         </p>
         <a href="http://airbnb.com/h/amatheaimperialsasapartamentoa" class="boton-rojo" target="_blank" rel="noopener noreferrer">
           Book via Airbnb
@@ -82,7 +300,7 @@
         <h3>Apartment B</h3>
         <img src="PIsoB.jpg" alt="Apartment B" />
         <p>
-          One-bedroom apartment with a double bed, sofa bed, one bathroom, and capacity for 3 guests.
+          One-bedroom apartment with double bed, sofa bed, one bathroom, and capacity for 3 guests.
         </p>
         <a href="http://airbnb.com/h/amatheaimperialsasapartamentob" class="boton-rojo" target="_blank" rel="noopener noreferrer">
           Book via Airbnb
@@ -199,9 +417,16 @@
         </p>
       </div>
 
-      <div style="margin-top: 28px;">
-        <a href="tel:+593989114500" class="boton-azul">📞 Call</a>
-        <a href="https://wa.me/593989114500" target="_blank" rel="noopener noreferrer" class="boton-rojo">💬 WhatsApp</a>
+      <div class="acciones-contacto">
+        <a href="tel:+593989114500" class="btn-contacto btn-llamar">
+          <span class="btn-icono">📞</span>
+          <span>Call</span>
+        </a>
+
+        <a href="https://wa.me/593989114500" target="_blank" rel="noopener noreferrer" class="btn-contacto btn-whatsapp">
+          <span class="btn-icono">💬</span>
+          <span>WhatsApp</span>
+        </a>
       </div>
     </section>
 
@@ -209,15 +434,15 @@
       <h3>Follow us on social media</h3>
 
       <div class="iconos-redes">
-        <a href="https://www.instagram.com/amatheaimperial?igsh=MW4zY2V4emJtM216bQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <a href="https://www.instagram.com/amatheaimperial?igsh=MW4zY2V4emJtM216bQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link instagram-link">
           <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" />
         </a>
 
-        <a href="https://www.facebook.com/profile.php?id=61580272500947" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <a href="https://www.facebook.com/profile.php?id=61580272500947" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-link facebook-link">
           <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" />
         </a>
 
-        <a href="https://www.tiktok.com/@amatheaimperials?_r=1&_t=ZS-95jV6g5bwU1" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <a href="https://www.tiktok.com/@amatheaimperials?_r=1&_t=ZS-95jV6g5bwU1" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="social-link tiktok-link">
           <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok" />
         </a>
       </div>
@@ -225,7 +450,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2026 Amathea Imperial S.A.S. All rights reserved.</p>
+    <p>&copy; Amathea Imperial S.A.S. Since 2025. All rights reserved.</p>
   </footer>
 
   <script>
