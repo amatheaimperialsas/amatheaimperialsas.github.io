@@ -1,7 +1,7 @@
 /* Amathea Imperial — Chatbot v3.0 | val.town proxy */
 (function(){
 const P='https://amatheaimperialsas--773e66fc5e0411f1b7501607ee4eb77e.web.val.run';
-const SYS=`Eres el asistente virtual oficial de Amathea Imperial S.A.S. Nombre: "Amathea Assistant". Responde siempre en el idioma del cliente (ES o EN). Tono: cálido, elegante, conciso. Usa negritas (**texto**) para datos clave. Máx 130 palabras salvo que necesiten más detalle.
+const SYS=`Eres el asistente virtual oficial de Amathea Imperial S.A.S. Nombre: "ED". Responde siempre en el idioma del cliente (ES o EN). Tono: cálido, elegante, conciso. Usa negritas (**texto**) para datos clave. Máx 130 palabras salvo que necesiten más detalle.
 
 == EMPRESA ==
 Nombre: AMATHEA IMPERIAL S.A.S.
@@ -82,9 +82,15 @@ const W={es:'¡Bienvenido a **Amathea Imperial** 🏡\n\nApartamentos de lujo en
 const QR={es:['💰 Precios','📅 Disponibilidad','🏠 Apartamentos','🚗 Transporte','🍽️ Comida','🏦 Pago directo'],en:['💰 Prices','📅 Availability','🏠 Apartments','🚗 Transport','🍽️ Food','🏦 Direct payment']};
 let H=[],lang=document.documentElement.lang==='en'?'en':'es',busy=false;
 
-const css=`#a-fab{position:fixed;bottom:130px;right:20px;width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#c9a84c,#9d7a2e);border:none;cursor:pointer;z-index:99999;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(201,168,76,.5);transition:transform .3s}
-#a-fab:hover{transform:scale(1.1)}#a-fab::before{content:'';position:absolute;inset:-4px;border-radius:50%;border:2px solid rgba(201,168,76,.4);animation:a-ring 2.5s ease-out infinite}
-@keyframes a-ring{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.6);opacity:0}}
+const css=`#a-fab{position:fixed;bottom:130px;right:20px;border-radius:30px;background:linear-gradient(135deg,#1a1a12,#2a2410);border:1px solid rgba(201,168,76,.5);cursor:pointer;z-index:99999;display:flex;align-items:center;gap:8px;padding:10px 16px 10px 12px;box-shadow:0 8px 28px rgba(0,0,0,.5),0 2px 8px rgba(201,168,76,.3);transition:all .3s;white-space:nowrap}
+#a-fab:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(0,0,0,.6),0 4px 16px rgba(201,168,76,.45);border-color:rgba(201,168,76,.8)}
+#a-fab .fab-avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#c9a84c,#9d7a2e);display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:1rem;font-weight:700;color:#0f0f0f;flex-shrink:0;position:relative}
+#a-fab .fab-avatar::after{content:'';position:absolute;bottom:0;right:0;width:9px;height:9px;border-radius:50%;background:#3ecf4a;border:2px solid #1a1a12}
+#a-fab .fab-text{display:flex;flex-direction:column;align-items:flex-start}
+#a-fab .fab-name{font-size:.8rem;font-weight:600;color:#e2c97e;letter-spacing:.05em;line-height:1}
+#a-fab .fab-sub{font-size:.62rem;color:#6a8a6a;letter-spacing:.04em;margin-top:2px}
+#a-fab::before{content:'';position:absolute;top:-1px;left:-1px;right:-1px;bottom:-1px;border-radius:30px;background:linear-gradient(135deg,rgba(201,168,76,.3),transparent,rgba(201,168,76,.15));pointer-events:none}
+@keyframes a-ring{0%{opacity:.8}100%{opacity:0}}
 #a-win{position:fixed;bottom:195px;right:16px;width:340px;height:510px;background:#161612;border:1px solid rgba(201,168,76,.2);border-radius:16px;box-shadow:0 24px 80px rgba(0,0,0,.7);display:flex;flex-direction:column;z-index:99998;overflow:hidden;transform:translateY(20px) scale(.95);opacity:0;pointer-events:none;transition:all .35s cubic-bezier(.34,1.56,.64,1);font-family:system-ui,sans-serif}
 #a-win.on{transform:none;opacity:1;pointer-events:all}
 .a-hd{background:linear-gradient(135deg,#161612,#1e1b0f);border-bottom:1px solid rgba(201,168,76,.2);padding:12px 14px;display:flex;align-items:center;gap:10px;flex-shrink:0}
@@ -117,9 +123,9 @@ const css=`#a-fab{position:fixed;bottom:130px;right:20px;width:54px;height:54px;
 
 const s=document.createElement('style');s.textContent=css;document.head.appendChild(s);
 const fab=document.createElement('button');fab.id='a-fab';fab.setAttribute('aria-label','Asistente Amathea Imperial');
-fab.innerHTML='<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h8M8 14h4" stroke-opacity=".7"/></svg>';
+fab.innerHTML='<div class="fab-avatar">ED</div><div class="fab-text"><span class="fab-name">ED</span><span class="fab-sub">● Online ahora</span></div>';
 const win=document.createElement('div');win.id='a-win';
-win.innerHTML=`<div class="a-hd"><div class="a-av">A</div><div><div class="a-nm">Amathea Assistant</div><div class="a-st">● Online 24/7</div></div><button class="a-lg" id="a-lg">ES/EN</button></div><div class="a-msgs" id="a-msgs"></div><div class="a-qrs" id="a-qrs"></div><div class="a-inp"><input type="text" id="a-txt" placeholder="Escribe tu pregunta…" maxlength="500" autocomplete="off"/><button id="a-snd"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button></div>`;
+win.innerHTML=`<div class="a-hd"><div class="a-av">A</div><div><div class="a-nm">ED</div><div class="a-st">● Online 24/7</div></div><button class="a-lg" id="a-lg">ES/EN</button></div><div class="a-msgs" id="a-msgs"></div><div class="a-qrs" id="a-qrs"></div><div class="a-inp"><input type="text" id="a-txt" placeholder="Escribe tu pregunta…" maxlength="500" autocomplete="off"/><button id="a-snd"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button></div>`;
 document.body.appendChild(fab);document.body.appendChild(win);
 const ms=document.getElementById('a-msgs'),inp=document.getElementById('a-txt'),snd=document.getElementById('a-snd'),qr=document.getElementById('a-qrs');
 function fmt(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\[WA\]/g,'<a class="a-cta" href="https://wa.me/34618939220" target="_blank">💬 WhatsApp</a>').replace(/\n/g,'<br>')}
