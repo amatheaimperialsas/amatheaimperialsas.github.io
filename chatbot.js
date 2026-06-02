@@ -70,19 +70,19 @@ Teléfono: +593 98 025 7877
 - El incumplimiento de las normas puede conllevar penalizaciones según la plataforma de reserva
 
 == INSTRUCCIONES PARA EL BOT ==
-- DISPONIBILIDAD Y RESERVAS: Cuando el cliente pregunte por disponibilidad, fechas o quiera reservar, primero pregúntale siempre por qué canal prefiere reservar y muéstrale las 3 opciones con sus enlaces exactos:
+- DISPONIBILIDAD Y RESERVAS: Cuando el cliente pregunte por disponibilidad, fechas o quiera reservar, pregúntale siempre por qué canal prefiere reservar y muéstrale estas opciones con links en formato [texto](url):
 
 🏡 **Reserva directa** (mejor precio garantizado)
-📞 Llama o escribe al: **+593 989 114 500**
+📞 **+593 989 114 500**
 
 ✈️ **Airbnb**
-• Apartamento A (hasta 5p): https://www.airbnb.es/rooms/1534153207590673237
-• Apartamento B (hasta 3p): https://www.airbnb.es/rooms/1406703789280995048
+• [Apartamento A — hasta 5 personas](https://www.airbnb.es/rooms/1534153207590673237)
+• [Apartamento B — hasta 3 personas](https://www.airbnb.es/rooms/1406703789280995048)
 
 🏨 **Booking.com**
-Reserva aquí: https://www.booking.com/searchresults.es.html?ss=Amathea+Imperial%2C+Machala%2C+Ecuador&dest_id=15182753&dest_type=hotel&group_adults=2&no_rooms=1&group_children=0
+[Ver disponibilidad en Booking](https://www.booking.com/searchresults.es.html?ss=Amathea+Imperial%2C+Machala%2C+Ecuador&dest_id=15182753&dest_type=hotel)
 
-Si elige reserva directa: proporciona los datos bancarios y solicita DNI + placa de vehículo antes de la llegada
+Si elige reserva directa: proporciona los datos bancarios y solicita DNI + placa de vehículo
 - Para pago directo: proporciona los datos bancarios completos
 - Para transporte: da el teléfono de SERVIEXCLUSIVO
 - Para comida: da el teléfono de Doña Nachita
@@ -131,6 +131,7 @@ const css=`#a-fab{position:fixed;bottom:130px;right:20px;border-radius:30px;back
 #a-snd:hover{transform:scale(1.08)}#a-snd:disabled{opacity:.4;cursor:not-allowed;transform:none}
 .a-b strong{color:#e2c97e;font-weight:500}
 .a-cta{display:inline-block;margin-top:6px;padding:5px 12px;background:linear-gradient(135deg,#c9a84c,#9d7a2e);color:#0f0f0f;border-radius:20px;font-size:.7rem;font-weight:600;text-decoration:none}
+.a-link{color:#c9a84c;text-decoration:none;font-weight:500;border-bottom:1px solid rgba(201,168,76,.3);transition:.2s;padding-bottom:1px}.a-link:hover{color:#e2c97e;border-color:#e2c97e}
 @media(max-width:480px){#a-win{width:calc(100vw - 16px);right:8px;bottom:185px}#a-fab{right:10px;bottom:120px}}`;
 
 const s=document.createElement('style');s.textContent=css;document.head.appendChild(s);
@@ -140,7 +141,7 @@ const win=document.createElement('div');win.id='a-win';
 win.innerHTML=`<div class="a-hd"><div class="a-av">A</div><div><div class="a-nm">ED</div><div class="a-st">● Online 24/7</div></div><button class="a-lg" id="a-lg">ES/EN</button></div><div class="a-msgs" id="a-msgs"></div><div class="a-qrs" id="a-qrs"></div><div class="a-inp"><input type="text" id="a-txt" placeholder="Escribe tu pregunta…" maxlength="500" autocomplete="off"/><button id="a-snd"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button></div>`;
 document.body.appendChild(fab);document.body.appendChild(win);
 const ms=document.getElementById('a-msgs'),inp=document.getElementById('a-txt'),snd=document.getElementById('a-snd'),qr=document.getElementById('a-qrs');
-function fmt(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\[WA\]/g,'<a class="a-cta" href="https://wa.me/34618939220" target="_blank">💬 WhatsApp</a>').replace(/\n/g,'<br>')}
+function fmt(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\[WA\]/g,'<a class="a-cta" href="https://wa.me/34618939220" target="_blank">💬 WhatsApp</a>').replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g,'<a class="a-link" href="$2" target="_blank" rel="noopener">$1 ↗</a>').replace(/\n/g,'<br>')}
 function msg(r,t){const d=document.createElement('div');d.className='a-m '+r;const tm=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});d.innerHTML=r==='b'?`<div class="a-av2">A</div><div><div class="a-b">${fmt(t)}</div><div class="a-t">${tm}</div></div>`:`<div><div class="a-b">${t.replace(/</g,'&lt;')}</div><div class="a-t" style="text-align:right">${tm}</div></div>`;ms.appendChild(d);ms.scrollTop=ms.scrollHeight}
 function typing(){const d=document.createElement('div');d.className='a-m b';d.id='a-ty';d.innerHTML='<div class="a-av2">A</div><div class="a-dots"><span></span><span></span><span></span></div>';ms.appendChild(d);ms.scrollTop=ms.scrollHeight}
 function rmTyping(){const e=document.getElementById('a-ty');if(e)e.remove()}
