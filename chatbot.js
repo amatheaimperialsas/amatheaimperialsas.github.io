@@ -132,7 +132,18 @@ const css=`#a-fab{position:fixed;bottom:130px;right:20px;border-radius:30px;back
 .a-b strong{color:#e2c97e;font-weight:500}
 .a-cta{display:inline-block;margin-top:6px;padding:5px 12px;background:linear-gradient(135deg,#c9a84c,#9d7a2e);color:#0f0f0f;border-radius:20px;font-size:.7rem;font-weight:600;text-decoration:none}
 .a-link{color:#c9a84c;text-decoration:none;font-weight:500;border-bottom:1px solid rgba(201,168,76,.3);transition:.2s;padding-bottom:1px}.a-link:hover{color:#e2c97e;border-color:#e2c97e}
-@media(max-width:480px){#a-win{width:calc(100vw - 16px);right:8px;bottom:185px}#a-fab{right:10px;bottom:120px}}`;
+@media(max-width:480px){#a-win{width:calc(100vw - 16px);right:8px;bottom:185px}#a-fab{right:10px;bottom:120px}}.a-head{font-size:.85rem;font-weight:700;color:#e2c97e;margin:6px 0 4px;letter-spacing:.03em;display:block}
+.a-head2{font-size:.78rem;font-weight:600;color:#c9a84c;margin:5px 0 3px;display:block}
+.a-tbl{width:100%;border-collapse:collapse;margin:6px 0;font-size:.74rem}
+.a-tbl th{background:rgba(201,168,76,.12);color:#c9a84c;padding:5px 8px;text-align:left;border-bottom:1px solid rgba(201,168,76,.3);font-weight:600}
+.a-tbl td{padding:5px 8px;border-bottom:1px solid rgba(201,168,76,.06);color:#e8e0d0;vertical-align:middle}
+.a-tbl tr:last-child td{border-bottom:none}
+.a-tbl tr:hover td{background:rgba(201,168,76,.04)}
+.a-tbl td:first-child{color:#c9a84c;font-weight:500}
+.a-hr{height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.25),transparent);margin:7px 0}
+.a-ul{margin:3px 0 3px 4px;padding:0;list-style:none}
+.a-ul li{padding:2px 0;color:#e8e0d0;font-size:.78rem;line-height:1.5}
+.a-ul li::before{content:"\u2022 ";color:#c9a84c}`;
 
 const s=document.createElement('style');s.textContent=css;document.head.appendChild(s);
 const fab=document.createElement('button');fab.id='a-fab';fab.setAttribute('aria-label','Asistente Amathea Imperial');
@@ -141,7 +152,8 @@ const win=document.createElement('div');win.id='a-win';
 win.innerHTML=`<div class="a-hd"><div class="a-av">A</div><div><div class="a-nm">ED</div><div class="a-st">● Online 24/7</div></div><button class="a-lg" id="a-lg">ES/EN</button></div><div class="a-msgs" id="a-msgs"></div><div class="a-qrs" id="a-qrs"></div><div class="a-inp"><input type="text" id="a-txt" placeholder="Escribe tu pregunta…" maxlength="500" autocomplete="off"/><button id="a-snd"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button></div>`;
 document.body.appendChild(fab);document.body.appendChild(win);
 const ms=document.getElementById('a-msgs'),inp=document.getElementById('a-txt'),snd=document.getElementById('a-snd'),qr=document.getElementById('a-qrs');
-function fmt(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\[WA\]/g,'<a class="a-cta" href="https://wa.me/34618939220" target="_blank">💬 WhatsApp</a>').replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g,'<a class="a-link" href="$2" target="_blank" rel="noopener">$1 ↗</a>').replace(/\n/g,'<br>')}
+function aI(t){return t.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\[WA\]/g,'<a class="a-cta" href="https://wa.me/34618939220" target="_blank">💬 WhatsApp</a>').replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g,'<a class="a-link" href="$2" target="_blank" rel="noopener">$1 ↗</a>')}
+function fmt(t){t=t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');var ln=t.split('\n'),o=[],i=0;while(i<ln.length){var l=ln[i];if(/^###\s/.test(l)){o.push('<span class="a-head">'+aI(l.replace(/^###\s+/,''))+'</span>');i++;continue}if(/^##\s/.test(l)){o.push('<span class="a-head2">'+aI(l.replace(/^##\s+/,''))+'</span>');i++;continue}if(l.trim()[0]==='|'&&i+1<ln.length&&/^\|[\s\-|]+\|$/.test(ln[i+1].trim())){var hh=l.split('|').filter(function(c,x,a){return x>0&&x<a.length-1}).map(function(h){return h.trim()});i+=2;var rr=[];while(i<ln.length&&ln[i].trim()[0]==='|'){rr.push(ln[i].split('|').filter(function(c,x,a){return x>0&&x<a.length-1}).map(function(c){return c.trim()}));i++}var tb='<table class="a-tbl"><thead><tr>';hh.forEach(function(h){tb+='<th>'+aI(h)+'</th>'});tb+='</tr></thead><tbody>';rr.forEach(function(r){tb+='<tr>';r.forEach(function(c){tb+='<td>'+aI(c)+'</td>'});tb+='</tr>'});o.push(tb+'</tbody></table>');continue}if(/^-{3,}$/.test(l.trim())){o.push('<div class="a-hr"></div>');i++;continue}if(/^[-*]\s/.test(l)){var li='';while(i<ln.length&&/^[-*]\s/.test(ln[i])){li+='<li>'+aI(ln[i].replace(/^[-*]\s+/,''))+'</li>';i++}o.push('<ul class="a-ul">'+li+'</ul>');continue}if(!l.trim()){o.push('<div style="height:4px"></div>');i++;continue}o.push(aI(l)+'<br>');i++}return o.join('')}
 function msg(r,t){const d=document.createElement('div');d.className='a-m '+r;const tm=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});d.innerHTML=r==='b'?`<div class="a-av2">A</div><div><div class="a-b">${fmt(t)}</div><div class="a-t">${tm}</div></div>`:`<div><div class="a-b">${t.replace(/</g,'&lt;')}</div><div class="a-t" style="text-align:right">${tm}</div></div>`;ms.appendChild(d);ms.scrollTop=ms.scrollHeight}
 function typing(){const d=document.createElement('div');d.className='a-m b';d.id='a-ty';d.innerHTML='<div class="a-av2">A</div><div class="a-dots"><span></span><span></span><span></span></div>';ms.appendChild(d);ms.scrollTop=ms.scrollHeight}
 function rmTyping(){const e=document.getElementById('a-ty');if(e)e.remove()}
