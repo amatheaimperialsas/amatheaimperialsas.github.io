@@ -70,7 +70,7 @@ Teléfono: +593 98 025 7877
 - El incumplimiento de las normas puede conllevar penalizaciones según la plataforma de reserva
 
 == INSTRUCCIONES PARA EL BOT ==
-- DISPONIBILIDAD Y RESERVAS: Cuando el cliente pregunte por disponibilidad, fechas libres o quiera reservar, primero pregúntale siempre: "¿Por qué canal prefieres hacer tu reserva?" y muéstrale estas 3 opciones con sus enlaces:\n\n🏡 **Reserva directa** (mejor precio garantizado)\nLlámanos o escríbenos: **+593 989 114 500**\n\n✈️ **Airbnb**\n• Apartamento A (hasta 5p): https://www.airbnb.es/rooms/1534153207590673237\n• Apartamento B (hasta 3p): https://www.airbnb.es/rooms/1406703789280995048\n\n🏨 **Booking.com**\nBusca "Amathea Imperial Machala" en Booking.com o contáctanos para el enlace directo [WA]\n\nSi elige reserva directa, proporciona los datos bancarios para transferencia.
+- Para reservar o consultar disponibilidad: usa [WA]
 - Para pago directo: proporciona los datos bancarios completos
 - Para transporte: da el teléfono de SERVIEXCLUSIVO
 - Para comida: da el teléfono de Doña Nachita
@@ -134,7 +134,7 @@ function typing(){const d=document.createElement('div');d.className='a-m b';d.id
 function rmTyping(){const e=document.getElementById('a-ty');if(e)e.remove()}
 function rQR(){qr.innerHTML='';QR[lang].forEach(q=>{const b=document.createElement('button');b.className='a-q';b.textContent=q;b.onclick=()=>{send(q);qr.innerHTML=''};qr.appendChild(b)})}
 async function send(t){t=(t||'').trim();if(!t||busy)return;msg('u',t);H.push({role:'user',content:t});inp.value='';busy=true;snd.disabled=true;inp.disabled=true;typing();
-try{const r=await fetch(P,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:800,system:SYS,messages:H})});const d=await r.json();const rep=d?.content?.[0]?.text||(d?.error?.message?('❌ '+d.error.message):(lang==='es'?'Error de conexión. Contáctanos: [WA]':'Connection error. Contact us: [WA]'));rmTyping();msg('b',rep);H.push({role:'assistant',content:rep});if(H.length===2)rQR()}catch(e){rmTyping();msg('b',lang==='es'?'Error de conexión. Contáctanos: [WA]':'Connection error. Contact us: [WA]')}
+try{const r=await fetch(P,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:800,system:SYS,messages:H})});const d=await r.json();const rep=d?.content?.[0]?.text||(lang==='es'?'Error de conexión. Contáctanos: [WA]':'Connection error. Contact us: [WA]');rmTyping();msg('b',rep);H.push({role:'assistant',content:rep});if(H.length===2)rQR()}catch(e){rmTyping();msg('b',lang==='es'?'Error de conexión. Contáctanos: [WA]':'Connection error. Contact us: [WA]')}
 busy=false;snd.disabled=false;inp.disabled=false}
 let open=false;
 fab.onclick=()=>{open=!open;win.classList.toggle('on',open);if(open&&H.length===0){msg('b',W[lang]);rQR()}if(open)setTimeout(()=>inp.focus(),350)};
