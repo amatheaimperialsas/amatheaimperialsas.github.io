@@ -61,28 +61,14 @@ Entrega directa al apartamento
 - Parrilladas nocturnas: Martes a Domingo
 Teléfono: +593 98 025 7877
 
-
-== LLEGADA / CHECK-IN ==
-Enlace Google Maps a la urbanización: https://www.google.es/maps/dir//Amathea+Imperial+S.A.S,+Urbanizaci%C3%B3n+privada+El+sol,+Manzana+N,+070150+Machala,+Ecuador/@-3.2443298,-79.9492692,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x90330f7404b5295d:0xa9183c7b05c80d3a!2m2!1d-79.9228145!2d-3.2671332?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D
-
-Requisitos de seguridad PREVIOS a la llegada (enviar al WhatsApp de contacto):
-- Documento de identidad de TODOS los ocupantes
-- Número de placa del vehículo (si ingresan con coche)
-Esto es necesario para autorizar el acceso en la garita de seguridad.
-
-WiFi del apartamento:
-- Red (SSID): NETLIFE-macfdullauriv1
-- Contraseña: 0101197986
-
-Administración: +593 98 911 4500
-
 == INSTRUCCIONES PARA EL BOT ==
 - Para reservar o consultar disponibilidad: usa [WA]
 - Para pago directo: proporciona los datos bancarios completos
 - Para transporte: da el teléfono de SERVIEXCLUSIVO
 - Para comida: da el teléfono de Doña Nachita
 - Para precios: muestra la tabla completa del apartamento consultado
-- Nunca inventes disponibilidad — siempre confirmar en tiempo real`;
+- Nunca inventes disponibilidad — siempre confirmar en tiempo real
+- WiFi: SOLO compartir la contraseña si el cliente confirma explícitamente que YA TIENE reserva confirmada. Si pregunta el WiFi sin confirmar reserva, responde: "El WiFi se facilita una vez confirmada la reserva. ¿Ya tienes tu reserva hecha? 😊" Si confirma que sí, entonces comparte: Red: NETLIFE-macfdullauriv1 | Contraseña: 0101197986`;
 
 const W={es:'¡Bienvenido a **Amathea Imperial** 🏡\n\nApartamentos de lujo en **Machala, Ecuador**\n⭐ 5.0 Airbnb · 9.2 Booking\n\n¿En qué puedo ayudarte?',en:'Welcome to **Amathea Imperial** 🏡\n\nLuxury apartments in **Machala, Ecuador**\n⭐ 5.0 Airbnb · 9.2 Booking\n\nHow can I help you?'};
 const QR={es:['💰 Precios','📅 Disponibilidad','🏠 Apartamentos','🚗 Transporte','🍽️ Comida','🏦 Pago directo'],en:['💰 Prices','📅 Availability','🏠 Apartments','🚗 Transport','🍽️ Food','🏦 Direct payment']};
