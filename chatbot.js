@@ -61,6 +61,14 @@ Entrega directa al apartamento
 - Parrilladas nocturnas: Martes a Domingo
 Teléfono: +593 98 025 7877
 
+
+== NORMAS DE LA CASA / HOUSE RULES ==
+- ✅ Check-in: desde las 15:00 h
+- ✅ Check-out: antes de las 12:30 h
+- 🚭 Prohibido fumar en el interior del apartamento
+- 🔇 Silencio y control de volumen a partir de las 22:00 h (respeto a los vecinos)
+- El incumplimiento de las normas puede conllevar penalizaciones según la plataforma de reserva
+
 == INSTRUCCIONES PARA EL BOT ==
 - Para reservar o consultar disponibilidad: usa [WA]
 - Para pago directo: proporciona los datos bancarios completos
