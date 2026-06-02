@@ -70,7 +70,19 @@ Teléfono: +593 98 025 7877
 - El incumplimiento de las normas puede conllevar penalizaciones según la plataforma de reserva
 
 == INSTRUCCIONES PARA EL BOT ==
-- Para reservar o consultar disponibilidad: usa [WA]
+- DISPONIBILIDAD Y RESERVAS: Cuando el cliente pregunte por disponibilidad, fechas o quiera reservar, primero pregúntale siempre por qué canal prefiere reservar y muéstrale las 3 opciones con sus enlaces exactos:
+
+🏡 **Reserva directa** (mejor precio garantizado)
+📞 Llama o escribe al: **+593 989 114 500**
+
+✈️ **Airbnb**
+• Apartamento A (hasta 5p): https://www.airbnb.es/rooms/1534153207590673237
+• Apartamento B (hasta 3p): https://www.airbnb.es/rooms/1406703789280995048
+
+🏨 **Booking.com**
+Reserva aquí: https://www.booking.com/searchresults.es.html?ss=Amathea+Imperial%2C+Machala%2C+Ecuador&dest_id=15182753&dest_type=hotel&group_adults=2&no_rooms=1&group_children=0
+
+Si elige reserva directa: proporciona los datos bancarios y solicita DNI + placa de vehículo antes de la llegada
 - Para pago directo: proporciona los datos bancarios completos
 - Para transporte: da el teléfono de SERVIEXCLUSIVO
 - Para comida: da el teléfono de Doña Nachita
