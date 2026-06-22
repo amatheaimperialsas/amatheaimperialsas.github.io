@@ -1,95 +1,7 @@
-/* Amathea Imperial — Chatbot v3.0 | val.town proxy */
+/* Amathea Imperial — Chatbot v3.7 | val.town proxy */
 (function(){
 const P='https://amatheaimperialsas--773e66fc5e0411f1b7501607ee4eb77e.web.val.run';
-const SYS=`Eres el asistente virtual oficial de Amathea Imperial S.A.S. Nombre: "ED". Responde siempre en el idioma del cliente (ES o EN). Tono: cálido, elegante, conciso. Usa negritas (**texto**) para datos clave. Máx 130 palabras salvo que necesiten más detalle.
-
-== EMPRESA ==
-Nombre: AMATHEA IMPERIAL S.A.S.
-RUC: 0791844705001
-Email: amatheaimperialsas@gmail.com
-Web: amatheaimperialsas.com
-Instagram: @amatheaimperialsas
-Facebook: amatheaimperialsas
-
-== CONTACTO ==
-Tel Ecuador: +593 989 114 500
-WhatsApp 1: +34 618 939 220
-WhatsApp 2: +34 660 184 759
-
-== APARTAMENTOS ==
-Ubicación: Urbanización El Sol, Machala, El Oro, Ecuador
-Apt A: hasta 5 personas | Apt B: hasta 3 personas
-Puntuaciones: Airbnb ⭐5.0 | Booking 9.2/10
-
-== TARIFAS POR NOCHE (USD) ==
-Entre semana = Lunes-Jueves + Domingo | Fin de semana = Viernes-Sábado
-
-Apartamento A:
-- 1 huésped: $50 / $55
-- 2 huéspedes: $60 / $65
-- 3 huéspedes: $75 / $80
-- 4 huéspedes: $85 / $90
-- 5 huéspedes: $95 / $100
-
-Apartamento B:
-- 1 huésped: $30 / $33
-- 2 huéspedes: $35 / $38
-- 3 huéspedes: $45 / $48
-
-== DATOS BANCARIOS (RESERVA DIRECTA) ==
-- Produbanco: Cuenta Corriente N.º 27059134874 | AMATHEA IMPERIAL S.A.S. | RUC: 0791844705001
-- Cooperativa Jardín Azuayo: Cuenta de Ahorros N.º 2838342 | AMATHEA IMPERIAL S.A.S. | RUC: 0791844705001
-Enviar comprobante a WhatsApp: +34 618 939 220 o +34 660 184 759
-
-== BEBIDAS & SNACKS (disponibles en el apartamento) ==
-- Coca-Cola personal: $2.00
-- Nestea: $2.00
-- Cerveza de importación: $3.00
-- Agua personal: $2.00
-- Vino tinto (botella): $28.00
-- Snacks: $2.00
-
-== SERVICIO DE TRANSPORTE ==
-Empresa: SERVIEXCLUSIVO (empresa externa autorizada, opera en la urbanización)
-Servicio con conductor | Disponible 24 horas
-Teléfono: +593 96 990 1694 | +593 99 811 2797
-
-== SERVICIO DE COMIDAS ==
-Proveedor: Parrilladas Doña Nachita
-Entrega directa al apartamento
-- Almuerzos: Lunes a Viernes
-- Parrilladas nocturnas: Martes a Domingo
-Teléfono: +593 98 025 7877
-
-
-== NORMAS DE LA CASA / HOUSE RULES ==
-- ✅ Check-in: desde las 15:00 h
-- ✅ Check-out: antes de las 12:30 h
-- 🚭 Prohibido fumar en el interior del apartamento
-- 🔇 Silencio y control de volumen a partir de las 22:00 h (respeto a los vecinos)
-- El incumplimiento de las normas puede conllevar penalizaciones según la plataforma de reserva
-
-== INSTRUCCIONES PARA EL BOT ==
-- DISPONIBILIDAD Y RESERVAS: Cuando el cliente pregunte por disponibilidad, fechas o quiera reservar, pregúntale siempre por qué canal prefiere reservar y muéstrale estas opciones con links en formato [texto](url):
-
-🏡 **Reserva directa** (mejor precio garantizado)
-📞 **+593 989 114 500**
-
-✈️ **Airbnb**
-• [Apartamento A — hasta 5 personas](https://www.airbnb.es/rooms/1534153207590673237)
-• [Apartamento B — hasta 3 personas](https://www.airbnb.es/rooms/1406703789280995048)
-
-🏨 **Booking.com**
-[Ver disponibilidad en Booking](https://www.booking.com/searchresults.es.html?ss=Amathea+Imperial%2C+Machala%2C+Ecuador&dest_id=15182753&dest_type=hotel)
-
-Si elige reserva directa: proporciona los datos bancarios y solicita DNI + placa de vehículo
-- Para pago directo: proporciona los datos bancarios completos
-- Para transporte: da el teléfono de SERVIEXCLUSIVO
-- Para comida: da el teléfono de Doña Nachita
-- Para precios: muestra la tabla completa del apartamento consultado
-- Nunca inventes disponibilidad — siempre confirmar en tiempo real
-- WiFi: SOLO compartir la contraseña si el cliente confirma explícitamente que YA TIENE reserva confirmada. Si pregunta el WiFi sin confirmar reserva, responde: "El WiFi se facilita una vez confirmada la reserva. ¿Ya tienes tu reserva hecha? 😊" Si confirma que sí, entonces comparte: Red: NETLIFE-macfdullauriv1 | Contraseña: 0101197986`;
-
+const K='e8cb674871c6882b41bd5708f69621e89ffaaf92';
 const W={es:'¡Bienvenido a **Amathea Imperial** 🏡\n\nApartamentos de lujo en **Machala, Ecuador**\n⭐ 5.0 Airbnb · 9.2 Booking\n\n¿En qué puedo ayudarte?',en:'Welcome to **Amathea Imperial** 🏡\n\nLuxury apartments in **Machala, Ecuador**\n⭐ 5.0 Airbnb · 9.2 Booking\n\nHow can I help you?'};
 const QR={es:['💰 Precios','📅 Disponibilidad','🏠 Apartamentos','🚗 Transporte','🍽️ Comida','🏦 Pago directo'],en:['💰 Prices','📅 Availability','🏠 Apartments','🚗 Transport','🍽️ Food','🏦 Direct payment']};
 let H=[],lang=document.documentElement.lang==='en'?'en':'es',busy=false;
@@ -143,7 +55,7 @@ const css=`#a-fab{position:fixed;bottom:130px;right:20px;border-radius:30px;back
 .a-hr{height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.25),transparent);margin:7px 0}
 .a-ul{margin:3px 0 3px 4px;padding:0;list-style:none}
 .a-ul li{padding:2px 0;color:#e8e0d0;font-size:.78rem;line-height:1.5}
-.a-ul li::before{content:"\u2022 ";color:#c9a84c}`;
+.a-ul li::before{content:"• ";color:#c9a84c}`;
 
 const s=document.createElement('style');s.textContent=css;document.head.appendChild(s);
 const fab=document.createElement('button');fab.id='a-fab';fab.setAttribute('aria-label','Asistente Amathea Imperial');
@@ -159,7 +71,7 @@ function typing(){const d=document.createElement('div');d.className='a-m b';d.id
 function rmTyping(){const e=document.getElementById('a-ty');if(e)e.remove()}
 function rQR(){qr.innerHTML='';QR[lang].forEach(q=>{const b=document.createElement('button');b.className='a-q';b.textContent=q;b.onclick=()=>{send(q);qr.innerHTML=''};qr.appendChild(b)})}
 async function send(t){t=(t||'').trim();if(!t||busy)return;msg('u',t);H.push({role:'user',content:t});inp.value='';busy=true;snd.disabled=true;inp.disabled=true;typing();
-try{const r=await fetch(P,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:800,system:SYS,messages:H})});const d=await r.json();const rep=d?.content?.[0]?.text||(lang==='es'?'Error de conexión. Contáctanos: [WA]':'Connection error. Contact us: [WA]');rmTyping();msg('b',rep);H.push({role:'assistant',content:rep});if(H.length>20)H=H.slice(-20);if(H.length===2||H.length<=4)rQR()}catch(e){rmTyping();msg('b',lang==='es'?'Error de conexión. Contáctanos: [WA]':'Connection error. Contact us: [WA]')}
+try{const r=await fetch(P,{method:'POST',headers:{'Content-Type':'application/json','X-Bot-Token':K},body:JSON.stringify({messages:H,lang:lang})});const d=await r.json();const rep=d?.content?.[0]?.text||(lang==='es'?'Error de conexión. Contáctanos: [WA]':'Connection error. Contact us: [WA]');rmTyping();msg('b',rep);H.push({role:'assistant',content:rep});if(H.length>20)H=H.slice(-20);if(H.length===2||H.length<=4)rQR()}catch(e){rmTyping();msg('b',lang==='es'?'Error de conexión. Contáctanos: [WA]':'Connection error. Contact us: [WA]')}
 busy=false;snd.disabled=false;inp.disabled=false}
 let open=false;
 fab.onclick=()=>{open=!open;win.classList.toggle('on',open);if(open&&H.length===0){msg('b',W[lang]);rQR()}if(open)setTimeout(()=>inp.focus(),350)};
