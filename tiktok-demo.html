@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TikTok Integration Demo (Sandbox) | Amathea Imperial</title>
+<link rel="icon" href="logo_actual.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',sans-serif;}
+  body{background:#f4f6fa;color:#222;min-height:100vh;}
+  header{background:#0a2647;color:#fff;padding:1.2rem 2rem;display:flex;align-items:center;gap:1rem;}
+  header h1{font-size:1.3rem;letter-spacing:1px;}
+  header .badge{background:#ffd700;color:#0a2647;font-size:0.75rem;font-weight:700;padding:3px 10px;border-radius:12px;}
+  .wrap{max-width:760px;margin:2rem auto;padding:0 1.2rem;}
+  .card{background:#fff;border-radius:14px;box-shadow:0 4px 16px rgba(10,38,71,.08);padding:1.6rem;margin-bottom:1.4rem;border-left:5px solid #ddd;}
+  .card.active{border-left-color:#ffd700;}
+  .card.done{border-left-color:#18a058;}
+  .card h2{font-size:1.05rem;color:#0a2647;margin-bottom:.4rem;display:flex;align-items:center;gap:.5rem;}
+  .card p{font-size:.9rem;color:#555;margin-bottom:.9rem;line-height:1.5;}
+  .btn{display:inline-block;border:none;cursor:pointer;font-weight:600;font-size:.95rem;padding:.65rem 1.4rem;border-radius:8px;background:#0a2647;color:#fff;transition:.2s;}
+  .btn:hover{background:#123d73;}
+  .btn.tiktok{background:#000;}
+  .btn.gold{background:#ffd700;color:#0a2647;}
+  .btn:disabled{opacity:.45;cursor:not-allowed;}
+  .status{font-size:.85rem;margin-top:.7rem;padding:.6rem .8rem;border-radius:8px;background:#f1f5fb;white-space:pre-wrap;word-break:break-all;display:none;}
+  .status.show{display:block;}
+  .status.ok{background:#e7f6ec;color:#14532d;}
+  .status.err{background:#fdecec;color:#7f1d1d;}
+  .userbox{display:flex;align-items:center;gap:14px;margin-top:.8rem;display:none;}
+  .userbox img{width:56px;height:56px;border-radius:50%;border:2px solid #ffd700;}
+  .userbox .n{font-weight:600;color:#0a2647;}
+  .userbox .i{font-size:.75rem;color:#777;}
+  footer{text-align:center;padding:1.5rem;font-size:.8rem;color:#888;}
+  .check{color:#18a058;font-weight:700;}
+</style>
+</head>
+<body>
+<header>
+  <h1>AMATHEA IMPERIAL</h1>
+  <span class="badge">TikTok API Demo — SANDBOX</span>
+</header>
+
+<div class="wrap">
+  <div class="card active" id="card1">
+    <h2><span id="c1mark">1️⃣</span> Login Kit — Autorización OAuth <code style="font-size:.75rem;color:#999">(user.info.basic)</code></h2>
+    <p>Conecta la cuenta TikTok autorizada del sandbox. Serás redirigido a TikTok para aprobar los permisos y volverás a esta página con el código de autorización.</p>
+    <button class="btn tiktok" id="btnLogin">🎵 Continuar con TikTok</button>
+    <div class="status" id="st1"></div>
+  </div>
+
+  <div class="card" id="card2">
+    <h2><span id="c2mark">2️⃣</span> Perfil de la cuenta autorizada <code style="font-size:.75rem;color:#999">(user.info.basic)</code></h2>
+    <p>Con el token de acceso obtenido, consultamos el perfil básico de la cuenta autorizada mediante la API oficial.</p>
+    <button class="btn" id="btnUser" disabled>Obtener perfil</button>
+    <div class="userbox" id="userbox"><img id="uavatar" src="" alt="avatar"><div><div class="n" id="uname"></div><div class="i" id="uopenid"></div></div></div>
+    <div class="status" id="st2"></div>
+  </div>
+
+  <div class="card" id="card3">
+    <h2><span id="c3mark">3️⃣</span> Content Posting — Direct Post <code style="font-size:.75rem;color:#999">(video.publish)</code></h2>
+    <p>Publica directamente un video promocional de Amathea Imperial en la cuenta autorizada (privacidad SELF_ONLY en sandbox).</p>
+    <button class="btn gold" id="btnPost" disabled>📤 Publicar video (Direct Post)</button>
+    <div class="status" id="st3"></div>
+  </div>
+
+  <div class="card" id="card4">
+    <h2><span id="c4mark">4️⃣</span> Content Posting — Upload como borrador <code style="font-size:.75rem;color:#999">(video.upload)</code></h2>
+    <p>Sube el mismo video a la bandeja de borradores del creador para editar y publicar desde la app de TikTok.</p>
+    <button class="btn" id="btnDraft" disabled>📥 Subir a borradores (Upload)</button>
+    <div class="status" id="st4"></div>
+  </div>
+</div>
+
+<footer>Amathea Imperial SAS — Demo de integración TikTok for Developers (entorno Sandbox) · amatheaimperialsas.com</footer>
+
+<script>
+const CLIENT_KEY = "sbaw04r7a6wg929xuo"; // sandbox client key (public in auth URL)
+const REDIRECT_URI = "https://amatheaimperialsas.com/tiktok-demo.html";
+const BACKEND = "__BACKEND_URL__"; // Val.town endpoint
+const VIDEO_URL = "https://amatheaimperialsas.com/demo-video.mp4";
+let ACCESS_TOKEN = sessionStorage.getItem('tt_at') || null;
+
+function show(id, msg, cls){const el=document.getElementById(id);el.textContent=msg;el.className='status show '+(cls||'');}
+function markDone(n){document.getElementById('card'+n).classList.add('done');document.getElementById('c'+n+'mark').textContent='✅';}
+
+// Paso 1: redirigir a TikTok OAuth
+document.getElementById('btnLogin').onclick = () => {
+  const state = Math.random().toString(36).slice(2);
+  const url = 'https://www.tiktok.com/v2/auth/authorize/'
+    + '?client_key=' + CLIENT_KEY
+    + '&response_type=code'
+    + '&scope=' + encodeURIComponent('user.info.basic,video.publish,video.upload')
+    + '&redirect_uri=' + encodeURIComponent(REDIRECT_URI)
+    + '&state=' + state;
+  window.location.href = url;
+};
+
+async function api(action, body){
+  const r = await fetch(BACKEND, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({action, ...body})});
+  return await r.json();
+}
+
+// Al volver con ?code=
+const params = new URLSearchParams(location.search);
+if (params.get('code')) {
+  markDone(1);
+  show('st1', '✔ Código de autorización recibido de TikTok:\n' + params.get('code').slice(0,28) + '…', 'ok');
+  document.getElementById('card2').classList.add('active');
+  (async () => {
+    show('st2', 'Intercambiando código por token de acceso…');
+    try {
+      const res = await api('token', {code: params.get('code'), redirect_uri: REDIRECT_URI});
+      if (res.access_token) {
+        ACCESS_TOKEN = res.access_token;
+        sessionStorage.setItem('tt_at', ACCESS_TOKEN);
+        show('st2', '✔ Token de acceso obtenido (open_id: ' + res.open_id + ')\nScopes: ' + res.scope, 'ok');
+        document.getElementById('btnUser').disabled = false;
+        document.getElementById('btnPost').disabled = false;
+        document.getElementById('btnDraft').disabled = false;
+        history.replaceState({}, '', REDIRECT_URI); // limpiar ?code de la URL
+      } else {
+        show('st2', '✖ Error: ' + JSON.stringify(res), 'err');
+      }
+    } catch(e) { show('st2', '✖ ' + e.message, 'err'); }
+  })();
+} else if (ACCESS_TOKEN) {
+  document.getElementById('btnUser').disabled = false;
+  document.getElementById('btnPost').disabled = false;
+  document.getElementById('btnDraft').disabled = false;
+}
+
+// Paso 2: perfil
+document.getElementById('btnUser').onclick = async () => {
+  show('st2', 'Consultando /v2/user/info/ …');
+  const res = await api('userinfo', {access_token: ACCESS_TOKEN});
+  const u = res?.data?.user;
+  if (u) {
+    document.getElementById('uavatar').src = u.avatar_url || '';
+    document.getElementById('uname').textContent = u.display_name || '(sin nombre)';
+    document.getElementById('uopenid').textContent = 'open_id: ' + (u.open_id||'').slice(0,20) + '…';
+    document.getElementById('userbox').style.display = 'flex';
+    show('st2', '✔ Perfil obtenido correctamente vía user.info.basic', 'ok');
+    markDone(2);
+    document.getElementById('card3').classList.add('active');
+  } else {
+    show('st2', '✖ ' + JSON.stringify(res), 'err');
+  }
+};
+
+// Paso 3: direct post
+document.getElementById('btnPost').onclick = async () => {
+  show('st3', 'Iniciando Direct Post (/v2/post/publish/video/init/) y subiendo video…');
+  const res = await api('post', {access_token: ACCESS_TOKEN, video_url: VIDEO_URL,
+    title: 'Amathea Imperial — demo sandbox #AmatheaImperial'});
+  if (res.publish_id) {
+    show('st3', '✔ Video publicado vía Direct Post.\npublish_id: ' + res.publish_id + '\nEstado: ' + (res.status || 'enviado') + '\n(Con privacidad SELF_ONLY, visible en el perfil de la cuenta sandbox)', 'ok');
+    markDone(3);
+    document.getElementById('card4').classList.add('active');
+  } else {
+    show('st3', '✖ ' + JSON.stringify(res), 'err');
+  }
+};
+
+// Paso 4: draft upload
+document.getElementById('btnDraft').onclick = async () => {
+  show('st4', 'Subiendo a borradores (/v2/post/publish/inbox/video/init/) …');
+  const res = await api('draft', {access_token: ACCESS_TOKEN, video_url: VIDEO_URL});
+  if (res.publish_id) {
+    show('st4', '✔ Video enviado a la bandeja de borradores del creador.\npublish_id: ' + res.publish_id + '\n(Aparece en la app de TikTok como notificación para editar y publicar)', 'ok');
+    markDone(4);
+  } else {
+    show('st4', '✖ ' + JSON.stringify(res), 'err');
+  }
+};
+</script>
+</body>
+</html>
