@@ -21,7 +21,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://amatheaimperialsas.com">
   <meta property="og:title" content="Amathea Imperial">
-  <meta property="og:description" content="Dos apartamentos de lujo completamente equipados en la exclusiva Urbanización El Sol, Machala. WiFi, A/C, cocina de mármol, acceso con código. Reserva en Airbnb o Booking.com.">
+  <meta property="og:description" content="Tres apartamentos de lujo completamente equipados en la exclusiva Urbanización El Sol, Machala. WiFi, A/C, cocina de mármol, acceso con código. Reserva en Airbnb, Booking.com o WhatsApp.">
   <meta property="og:image" content="https://amatheaimperialsas.com/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -216,7 +216,7 @@ section{padding:clamp(3.5rem,8vw,6rem) 0}
 .apartments{background:var(--forest)}
 .apt-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:clamp(2rem,5vw,3.5rem);flex-wrap:wrap;gap:1.5rem}
 .apt-sub{font-size:.9rem;line-height:1.8;color:rgba(240,232,214,.65);max-width:360px;font-weight:300}
-.apt-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.apt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem}
 .apt-card{background:var(--forest-mid);overflow:hidden;transition:transform .4s}
 .apt-card:hover{transform:translateY(-3px)}
 .apt-gallery{display:flex;flex-direction:column}
@@ -235,6 +235,13 @@ section{padding:clamp(3.5rem,8vw,6rem) 0}
 .apt-placeholder-icon svg{width:48px;height:48px;stroke:rgba(184,151,74,.3);stroke-width:1.2;fill:none}
 .apt-placeholder-text{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(184,151,74,.4)}
 .apt-tag{position:absolute;top:.9rem;left:.9rem;background:var(--gold);color:var(--white);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;padding:.28rem .75rem;font-weight:600;z-index:2}
+.apt-photos-soon{position:relative;aspect-ratio:16/10;background:var(--forest);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:.5rem;padding:1rem}
+.apt-photos-soon svg{width:34px;height:34px;stroke:var(--gold-light);stroke-width:1.3;fill:none;opacity:.85}
+.apt-photos-soon-text{color:var(--gold-light);font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;opacity:.9}
+.btn-whatsapp{flex:1;padding:.7rem;text-align:center;background:var(--gold);color:var(--white);font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;font-family:'Jost',sans-serif;transition:background .3s}
+.btn-whatsapp:hover{background:var(--gold-light)}
+.btn-call{flex:1;padding:.7rem;text-align:center;border:1px solid rgba(184,151,74,.5);color:var(--gold-light);font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;font-weight:400;font-family:'Jost',sans-serif;transition:all .3s}
+.btn-call:hover{color:var(--white);border-color:var(--gold-light)}
 .apt-body{padding:clamp(1rem,3vw,1.6rem)}
 .apt-name{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--cream);margin-bottom:.3rem}
 .apt-cap{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:1rem;font-weight:400}
@@ -509,7 +516,7 @@ select.f-input option{{background:var(--forest);color:var(--cream)}}
 <div class="intro-stats-band">
   <div class="container">
     <div class="intro-stats reveal">
-      <div class="intro-stat"><div class="stat-num">2</div><div class="stat-label"><span data-lang="es" class="active">Apartamentos exclusivos</span><span data-lang="en">Exclusive apartments</span></div></div>
+      <div class="intro-stat"><div class="stat-num">3</div><div class="stat-label"><span data-lang="es" class="active">Apartamentos exclusivos</span><span data-lang="en">Exclusive apartments</span></div></div>
       <div class="intro-stat-div"></div>
       <div class="intro-stat"><div class="stat-num">100<span class="stat-pct">%</span></div><div class="stat-label"><span data-lang="es" class="active">Equipados y listos</span><span data-lang="en">Fully equipped</span></div></div>
       <div class="intro-stat-div"></div>
@@ -539,7 +546,7 @@ select.f-input option{{background:var(--forest);color:var(--cream)}}
               <div class="ilb-tagline"><span data-lang="es" class="active">Apartamentos de lujo<br>Machala · Ecuador</span><span data-lang="en">Luxury Apartments<br>Machala · Ecuador</span></div>
             </div>
             <div class="ilb-stats">
-              <div class="ilb-stat"><div class="ilb-stat-num">2</div><div class="ilb-stat-label"><span data-lang="es" class="active">Apartamentos</span><span data-lang="en">Apartments</span></div></div>
+              <div class="ilb-stat"><div class="ilb-stat-num">3</div><div class="ilb-stat-label"><span data-lang="es" class="active">Apartamentos</span><span data-lang="en">Apartments</span></div></div>
               <div class="ilb-divider"></div>
               <div class="ilb-stat"><div class="ilb-stat-num">5★</div><div class="ilb-stat-label"><span data-lang="es" class="active">Experiencia</span><span data-lang="en">Experience</span></div></div>
               <div class="ilb-divider"></div>
@@ -582,7 +589,7 @@ select.f-input option{{background:var(--forest);color:var(--cream)}}
         <h2 class="section-h on-dark"><span data-lang="es" class="active">Elige tu <em>refugio</em></span><span data-lang="en">Choose your <em>retreat</em></span></h2>
         <div class="divider" style="background:var(--gold-light)"></div>
       </div>
-      <p class="apt-sub"><span data-lang="es" class="active">Dos apartamentos completamente equipados para una estadía perfecta.</span><span data-lang="en">Two fully equipped apartments for a perfect stay.</span></p>
+      <p class="apt-sub"><span data-lang="es" class="active">Tres apartamentos completamente equipados para una estadía perfecta.</span><span data-lang="en">Three fully equipped apartments for a perfect stay.</span></p>
     </div>
     <div class="apt-grid">
       <!-- APT A -->
@@ -698,6 +705,35 @@ select.f-input option{{background:var(--forest);color:var(--cream)}}
           </div>
         </div>
       </div>
+      <!-- APT C -->
+      <div class="apt-card reveal">
+        <div style="position:relative">
+          <div class="apt-photos-soon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="8" cy="10" r="2"/><path d="M2 17l5-5 4 4 5-6 6 7"/></svg>
+            <span class="apt-photos-soon-text"><span data-lang="es" class="active">Más fotos próximamente</span><span data-lang="en">More photos coming soon</span></span>
+          </div>
+          <div class="apt-tag">Apartamento C</div>
+        </div>
+        <div class="apt-body">
+          <div class="apt-name">Apartamento C</div>
+          <div class="apt-cap"><span data-lang="es" class="active">Hasta 7 huéspedes &middot; 3 habitaciones dobles</span><span data-lang="en">Up to 7 guests &middot; 3 double bedrooms</span></div>
+          <div class="apt-desc-box">
+            <div class="apt-desc-title"><span data-lang="es" class="active">Amplitud y comodidad en planta baja</span><span data-lang="en">Space and comfort on the ground floor</span></div>
+            <div class="apt-desc-text"><span data-lang="es" class="active">Ubicado en la planta baja, justo debajo de los apartamentos A y B. Tres habitaciones, cada una con cama matrimonial, closet amplio y elegante, y aire acondicionado. Salón con sofá cama, televisión con app Magic TV y aire acondicionado. Baño completo. Cocina totalmente amueblada con menaje, cubertería, nevera, copas y vasos. Ideal para grupos y familias numerosas.</span><span data-lang="en">Located on the ground floor, right below apartments A and B. Three bedrooms, each with a double bed, a spacious elegant closet and air conditioning. Living room with sofa bed, TV with the Magic TV app and air conditioning. Full bathroom. Fully furnished kitchen with cookware, cutlery, fridge, glasses and cups. Ideal for groups and large families.</span></div>
+            <div class="apt-badges">
+              <div class="badge"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span data-lang="es" class="active">3 habitaciones dobles</span><span data-lang="en">3 double bedrooms</span></div>
+              <div class="badge"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span data-lang="es" class="active">Baño completo</span><span data-lang="en">Full bathroom</span></div>
+              <div class="badge"><svg viewBox="0 0 24 24"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9zM3 9V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v3"/></svg><span data-lang="es" class="active">Cocina equipada</span><span data-lang="en">Full kitchen</span></div>
+              <div class="badge"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span data-lang="es" class="active">Planta baja</span><span data-lang="en">Ground floor</span></div>
+            </div>
+          </div>
+          <div class="apt-pills"><span class="pill"><span data-lang="es" class="active">Totalmente amueblado</span><span data-lang="en">Fully furnished</span></span><span class="pill">WiFi</span><span class="pill">Magic TV</span><span class="pill">A/C</span><span class="pill"><span data-lang="es" class="active">Cocina equipada</span><span data-lang="en">Full kitchen</span></span><span class="pill"><span data-lang="es" class="active">Hasta 7 huéspedes</span><span data-lang="en">Up to 7 guests</span></span></div>
+          <div class="apt-btns">
+            <a href="https://wa.me/593989114500?text=Hola%2C%20quisiera%20reservar%20el%20Apartamento%20C%20de%20Amathea%20Imperial" target="_blank" rel="noopener" class="btn-whatsapp"><span data-lang="es" class="active">Reservar por WhatsApp</span><span data-lang="en">Book via WhatsApp</span></a>
+            <a href="tel:+593989114500" class="btn-call"><span data-lang="es" class="active">Llamar para más info</span><span data-lang="en">Call for more info</span></a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -798,6 +834,7 @@ select.f-input option{{background:var(--forest);color:var(--cream)}}
                 <option value=""><span data-lang="es" class="active">Seleccionar</span></option>
                 <option value="Apartamento A">Apartamento A (5 personas)</option>
                 <option value="Apartamento B">Apartamento B (3 personas)</option>
+                <option value="Apartamento C">Apartamento C (7 personas)</option>
                 <option value="Sin preferencia">Sin preferencia</option>
               </select>
             </div>
