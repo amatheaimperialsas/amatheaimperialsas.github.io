@@ -708,9 +708,14 @@ select.f-input option{{background:var(--forest);color:var(--cream)}}
       <!-- APT C -->
       <div class="apt-card reveal">
         <div style="position:relative">
-          <div class="apt-photos-soon">
-            <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="8" cy="10" r="2"/><path d="M2 17l5-5 4 4 5-6 6 7"/></svg>
+          <div class="apt-gallery" id="gallery-c">
+          <div class="gallery-main" onclick="openLb('c',0)">
+            <img src="img/apt-c-01-fachada-noche.jpg" alt="Fachada · Vista nocturna" loading="lazy">
+            <div class="gallery-zoom-hint"><svg viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="1.5"/></svg></div>
+          </div>
+          <div class="apt-photos-soon" style="aspect-ratio:auto;padding:.7rem 1rem">
             <span class="apt-photos-soon-text"><span data-lang="es" class="active">Más fotos próximamente</span><span data-lang="en">More photos coming soon</span></span>
+          </div>
           </div>
           <div class="apt-tag">Apartamento C</div>
         </div>
@@ -1056,6 +1061,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click
 const lbData = {};
 lbData['a'] = [{src:"img/apt-a-01-salon-comedor.jpg",label:"Salón · Comedor"},{src:"img/apt-a-02-vista-general.jpg",label:"Vista general"},{src:"img/apt-a-03-cocina-equipada.jpg",label:"Cocina equipada"},{src:"img/apt-a-04-cocina-vista-completa.jpg",label:"Cocina · Vista completa"},{src:"img/apt-a-05-encimera-marmol-negro.jpg",label:"Encimera · Mármol negro"},{src:"img/apt-a-06-suite-matrimonial.jpg",label:"Suite matrimonial"},{src:"img/apt-a-07-suite-luz-natural.jpg",label:"Suite · Luz natural"},{src:"img/apt-a-08-suite-vista-completa.jpg",label:"Suite · Vista completa"},{src:"img/apt-a-09-bano-privado-suite.jpg",label:"Baño privado suite"},{src:"img/apt-a-10-segunda-habitacion.jpg",label:"Segunda habitación"},{src:"img/apt-a-11-segunda-habitacion-vista.jpg",label:"Segunda habitación · Vista"},{src:"img/apt-a-12-bano-segunda-habitacion.jpg",label:"Baño segunda habitación"},{src:"img/apt-a-13-bano-ducha-marmol.jpg",label:"Baño · Ducha de mármol"}];
 lbData['b'] = [{src:"img/apt-b-01-vista-general.jpg",label:"Vista general"},{src:"img/apt-b-02-salon-comedor.jpg",label:"Salón · Comedor"},{src:"img/apt-b-03-comedor-detalles.jpg",label:"Comedor · Detalles"},{src:"img/apt-b-04-cocina-equipada.jpg",label:"Cocina equipada"},{src:"img/apt-b-05-cocina-marmol.jpg",label:"Cocina · Mármol"},{src:"img/apt-b-06-habitacion-doble.jpg",label:"Habitación doble"},{src:"img/apt-b-07-habitacion-detalle.jpg",label:"Habitación · Detalle"},{src:"img/apt-b-08-bano-completo.jpg",label:"Baño completo"},{src:"img/apt-b-09-habitacion-closet-bano.jpg",label:"Habitación · Closet y baño"}];
+lbData['c'] = [{src:"img/apt-c-01-fachada-noche.jpg",label:"Fachada · Vista nocturna"}];
 let lbApt = 'a', lbIdx = 0;
 function openLb(apt, idx) {
   if (!lbData[apt] || !lbData[apt].length) return;
