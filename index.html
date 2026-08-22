@@ -131,23 +131,41 @@ nav.scrolled .hamburger span{background:var(--forest)}
 @media(min-width:640px){.cfloat-label{display:inline}}
 
 /* HERO */
-.hero{height:100svh;min-height:600px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(160deg,#111e12 0%,#1e2e20 45%,#2c3d2e 100%)}
-.hero-pattern{position:absolute;inset:0;opacity:.05;background-image:repeating-linear-gradient(45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 50%);background-size:20px 20px}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(17,30,18,.05) 0%,rgba(17,30,18,.55) 100%)}
-.hero-content{position:relative;text-align:center;color:var(--white);padding:1.5rem;max-width:860px;width:100%}
-.hero-logo-wrap{margin:0 auto 1.8rem;opacity:0;animation:fadeUp .8s .15s ease forwards}
-.hero-logo-wrap img{height:clamp(60px,12vw,100px);margin:0 auto}
-.hero-eyebrow{font-size:clamp(.55rem,.9vw,.68rem);letter-spacing:.35em;text-transform:uppercase;color:var(--gold-light);margin-bottom:1.4rem;opacity:0;animation:fadeUp .8s .3s ease forwards}
-.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,6vw,5.2rem);font-weight:300;line-height:1.05;margin-bottom:1.2rem;opacity:0;animation:fadeUp .9s .45s ease forwards}
-.hero-title em{font-style:italic;color:var(--gold-light)}
-.hero-sub{font-size:clamp(.75rem,.9vw,.88rem);letter-spacing:.12em;color:rgba(255,255,255,.65);margin-bottom:2.4rem;opacity:0;animation:fadeUp .8s .6s ease forwards}
-.hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .75s ease forwards}
+.hero-video-section{position:relative;overflow:hidden;background:linear-gradient(160deg,#111e12 0%,#1e2e20 45%,#2c3d2e 100%);padding:calc(var(--nav-h) + clamp(3rem,7vw,5rem)) 0 clamp(3.5rem,7vw,5.5rem)}
+.hero-video-pattern{position:absolute;inset:0;opacity:.05;background-image:repeating-linear-gradient(45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 50%);background-size:20px 20px;pointer-events:none}
+.hero-box{position:relative;max-width:520px;margin:0 auto;text-align:center;opacity:0;animation:fadeUp .9s .1s ease forwards}
+.hvs-logo-wrap{margin-bottom:1.1rem}
+.hvs-logo-wrap img{height:clamp(44px,7vw,60px)}
+.hvs-brand-word{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,6vw,3.6rem);font-weight:300;letter-spacing:.16em;color:var(--cream);line-height:1;margin-bottom:.6rem}
+.hvs-tagline{font-size:clamp(.9rem,1.6vw,1.1rem);letter-spacing:.05em;color:var(--gold-light);margin-bottom:.35rem;font-family:'Cormorant Garamond',serif;font-style:italic}
+.hvs-eyebrow{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(240,232,214,.6);margin:0}
+.hvs-stats-bar{display:flex;align-items:center;justify-content:center;width:100%;margin-top:2.1rem;opacity:0;animation:fadeUp .8s .3s ease forwards}
+.hvs-stat{text-align:center;padding:0 1.4rem}
+.hvs-stat-num{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.8vw,2.1rem);font-weight:300;color:var(--gold-light);line-height:1}
+.hvs-stat-label{font-size:.56rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(240,232,214,.5);margin-top:.25rem}
+.hvs-stat-div{width:1px;height:32px;background:rgba(184,151,74,.25)}
+.hvs-cta{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:2.2rem;opacity:0;animation:fadeUp .8s .42s ease forwards}
+
+/* APARTMENTS VIDEO */
+.apt-video{display:flex;justify-content:center;margin:0 0 clamp(2.6rem,5vw,3.6rem)}
+.apt-video-frame{position:relative;width:100%;max-width:min(380px,88vw);aspect-ratio:9/16;border:1px solid rgba(184,151,74,.3);box-shadow:0 30px 70px -20px rgba(0,0,0,.55);overflow:hidden;background:#000}
+.apt-video-frame video{width:100%;height:100%;object-fit:cover;display:block}
+.apt-video-badge{position:absolute;top:.8rem;left:.8rem;background:rgba(17,30,18,.75);border:1px solid rgba(184,151,74,.4);color:var(--gold-light);font-size:.55rem;letter-spacing:.16em;text-transform:uppercase;padding:.32rem .7rem;z-index:2;font-family:'Jost',sans-serif}
+
+/* LOCATION MAP */
+.loc-map-frame{position:relative;border:1px solid rgba(184,151,74,.22);overflow:hidden;background:#000}
+.loc-map-frame iframe{width:100%;height:340px;display:block;border:0;filter:grayscale(.15) contrast(1.05)}
+.loc-map-bar{background:var(--forest);padding:.55rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap}
+.loc-map-bar-label{display:flex;align-items:center;gap:.55rem}
+.loc-map-bar-label svg{width:14px;height:14px;stroke:var(--gold-light);stroke-width:1.5;fill:none;flex-shrink:0}
+.loc-map-bar-label span{font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light)}
+.loc-map-open{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(240,232,214,.75);text-decoration:none;border-bottom:1px solid rgba(184,151,74,.4);white-space:nowrap}
+.loc-map-open:hover{color:var(--gold-light)}
 .btn-gold{display:inline-block;padding:.82rem 2rem;background:var(--gold);color:var(--white);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;font-family:'Jost',sans-serif;transition:all .3s;border:1.5px solid var(--gold)}
 .btn-gold:hover{background:var(--gold-light);border-color:var(--gold-light);transform:translateY(-1px)}
 .btn-ghost{display:inline-block;padding:.82rem 2rem;border:1.5px solid rgba(255,255,255,.5);color:var(--white);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:400;font-family:'Jost',sans-serif;transition:all .3s}
 .btn-ghost:hover{border-color:var(--white);background:rgba(255,255,255,.08)}
-.hero-scroll-hint{position:absolute;bottom:1.8rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;opacity:.5}
+.hero-scroll-hint{position:relative;margin:2.5rem auto 0;display:flex;flex-direction:column;align-items:center;gap:.4rem;opacity:.5}
 .scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,transparent,var(--white));animation:scrollPulse 2s infinite}
 
 /* SECTIONS */
@@ -284,7 +302,7 @@ section{padding:clamp(3.5rem,8vw,6rem) 0}
 .loc-text{font-size:.88rem;color:var(--text-mid);line-height:1.65;font-weight:300}
 .loc-right{display:flex;flex-direction:column;gap:1.2rem}
 .video-wrap{border:1px solid rgba(184,151,74,.22);overflow:hidden;background:#000}
-.video-wrap video{width:100%;display:block;max-height:300px;object-fit:cover}
+.video-wrap video,.video-wrap img{width:100%;display:block;max-height:340px;object-fit:cover}
 .video-bar{background:var(--forest);padding:.55rem 1rem;display:flex;align-items:center;gap:.55rem}
 .video-bar svg{width:14px;height:14px;stroke:var(--gold-light);stroke-width:1.5;fill:none;flex-shrink:0}
 .video-bar span{font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light)}
@@ -368,10 +386,15 @@ span[data-lang]{display:none}span[data-lang].active{display:inline}
   :root{--nav-h:60px}
   .nav-links,.nav-right{display:none}
   .hamburger{display:flex}
-  .hero-cta{flex-direction:column;align-items:center}
+  .hvs-cta{flex-direction:column;align-items:center}
   .btn-gold,.btn-ghost{width:100%;max-width:260px;text-align:center}
   .social-float{display:none}
   .intro-grid{grid-template-columns:1fr;gap:2rem}
+  .hero-box{max-width:92vw}
+  .hvs-stat{padding:0 .9rem}
+  .hvs-brand-word{font-size:clamp(1.9rem,9vw,2.6rem)}
+  .loc-map-frame iframe{height:260px}
+  .loc-map-bar{flex-direction:column;align-items:flex-start;gap:.4rem}
   .intro-luxury-block{aspect-ratio:3/2}
   .feats{grid-template-columns:1fr 1fr}
   .intro-quote-inner{flex-direction:column;gap:1rem}
@@ -488,16 +511,25 @@ select.f-input option{{background:var(--forest);color:var(--cream)}}
 </div>
 
 <!-- HERO -->
-<section class="hero" id="inicio">
-  <div class="hero-bg"></div><div class="hero-pattern"></div><div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-logo-wrap"><img src="img/logo.png" alt="Amathea Imperial"></div>
-    <p class="hero-eyebrow"><span data-lang="es" class="active">Urbanización El Sol &middot; Machala &middot; Ecuador</span><span data-lang="en">El Sol Estate &middot; Machala &middot; Ecuador</span></p>
-    <h1 class="hero-title"><span data-lang="es" class="active">Donde el confort<br>se convierte en <em>arte</em></span><span data-lang="en">Where comfort<br>becomes <em>art</em></span></h1>
-    <p class="hero-sub"><span data-lang="es" class="active">Apartamentos de lujo &middot; Estadías cortas y largas</span><span data-lang="en">Luxury apartments &middot; Short &amp; long stays</span></p>
-    <div class="hero-cta">
-      <a href="#apartamentos" class="btn-gold"><span data-lang="es" class="active">Ver apartamentos</span><span data-lang="en">View apartments</span></a>
-      <a href="#contacto" class="btn-ghost"><span data-lang="es" class="active">Contactar</span><span data-lang="en">Get in touch</span></a>
+<section class="hero-video-section" id="inicio">
+  <div class="hero-video-pattern"></div>
+  <div class="container">
+    <div class="hero-box reveal">
+      <div class="hvs-logo-wrap"><img src="img/logo.png" alt="Amathea Imperial"></div>
+      <h1 class="hvs-brand-word">IMPERIAL</h1>
+      <p class="hvs-tagline"><span data-lang="es" class="active">Apartamentos de lujo</span><span data-lang="en">Luxury Apartments</span></p>
+      <p class="hvs-eyebrow"><span data-lang="es" class="active">Machala &middot; Ecuador</span><span data-lang="en">Machala &middot; Ecuador</span></p>
+      <div class="hvs-stats-bar">
+        <div class="hvs-stat"><div class="hvs-stat-num">3</div><div class="hvs-stat-label"><span data-lang="es" class="active">Apartamentos</span><span data-lang="en">Apartments</span></div></div>
+        <div class="hvs-stat-div"></div>
+        <div class="hvs-stat"><div class="hvs-stat-num">5★</div><div class="hvs-stat-label"><span data-lang="es" class="active">Experiencia</span><span data-lang="en">Experience</span></div></div>
+        <div class="hvs-stat-div"></div>
+        <div class="hvs-stat"><div class="hvs-stat-num">24h</div><div class="hvs-stat-label"><span data-lang="es" class="active">Acceso</span><span data-lang="en">Access</span></div></div>
+      </div>
+      <div class="hvs-cta">
+        <a href="#apartamentos" class="btn-gold"><span data-lang="es" class="active">Ver apartamentos</span><span data-lang="en">View apartments</span></a>
+        <a href="#contacto" class="btn-ghost"><span data-lang="es" class="active">Contactar</span><span data-lang="en">Get in touch</span></a>
+      </div>
     </div>
   </div>
   <div class="hero-scroll-hint"><div class="scroll-line"></div></div>
@@ -591,39 +623,55 @@ select.f-input option{{background:var(--forest);color:var(--cream)}}
       </div>
       <p class="apt-sub"><span data-lang="es" class="active">Tres apartamentos completamente equipados para una estadía perfecta.</span><span data-lang="en">Three fully equipped apartments for a perfect stay.</span></p>
     </div>
+    <div class="apt-video reveal">
+      <div class="apt-video-frame">
+        <div class="apt-video-badge"><span data-lang="es" class="active">Video · Amathea Imperial</span><span data-lang="en">Video · Amathea Imperial</span></div>
+        <video controls preload="metadata" playsinline>
+          <source src="amathea-video-2026.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
     <div class="apt-grid">
       <!-- APT A -->
       <div class="apt-card reveal">
         <div style="position:relative">
           <div class="apt-gallery" id="gallery-a">
           <div class="gallery-main" onclick="openLb('a',0)">
-            <img src="img/apt-a-01-salon-comedor.jpg" alt="Salón · Comedor" loading="lazy">
+            <img src="img/apt-a-01-entrada-pasillo.jpg" alt="Entrada · Acceso privado" loading="lazy">
             <div class="gallery-zoom-hint"><svg viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="1.5"/></svg></div>
           </div>
           <div class="gallery-thumbs">
           <div class="thumb" onclick="openLb('a',1)">
-            <img src="img/apt-a-02-vista-general.jpg" alt="Vista general" loading="lazy">
-            <span class="thumb-label">Vista general</span>
+            <img src="img/apt-a-02-comedor.jpg" alt="Comedor" loading="lazy">
+            <span class="thumb-label">Comedor</span>
           </div>
           <div class="thumb" onclick="openLb('a',2)">
-            <img src="img/apt-a-03-cocina-equipada.jpg" alt="Cocina equipada" loading="lazy">
-            <span class="thumb-label">Cocina equipada</span>
+            <img src="img/apt-a-03-sala-estar.jpg" alt="Sala de estar" loading="lazy">
+            <span class="thumb-label">Sala de estar</span>
           </div>
           <div class="thumb" onclick="openLb('a',3)">
-            <img src="img/apt-a-04-cocina-vista-completa.jpg" alt="Cocina · Vista completa" loading="lazy">
-            <span class="thumb-label">Cocina · Vista completa</span>
+            <img src="img/apt-a-04-cocina-equipada.jpg" alt="Cocina equipada" loading="lazy">
+            <span class="thumb-label">Cocina equipada</span>
           </div>
           <div class="thumb" onclick="openLb('a',4)">
-            <img src="img/apt-a-05-encimera-marmol-negro.jpg" alt="Encimera · Mármol negro" loading="lazy">
-            <span class="thumb-label">Encimera · Mármol negro</span>
+            <img src="img/apt-a-05-segunda-habitacion.jpg" alt="Segunda habitación" loading="lazy">
+            <span class="thumb-label">Segunda habitación</span>
           </div>
           <div class="thumb" onclick="openLb('a',5)">
             <img src="img/apt-a-06-suite-matrimonial.jpg" alt="Suite matrimonial" loading="lazy">
             <span class="thumb-label">Suite matrimonial</span>
           </div>
           <div class="thumb" onclick="openLb('a',6)">
-            <img src="img/apt-a-07-suite-luz-natural.jpg" alt="Suite · Luz natural" loading="lazy">
-            <span class="thumb-label">Suite · Luz natural</span>
+            <img src="img/apt-a-07-bano-privado.jpg" alt="Baño privado" loading="lazy">
+            <span class="thumb-label">Baño privado</span>
+          </div>
+          <div class="thumb" onclick="openLb('a',7)">
+            <img src="img/apt-a-08-pasillo-espejos.jpg" alt="Pasillo interior" loading="lazy">
+            <span class="thumb-label">Pasillo interior</span>
+          </div>
+          <div class="thumb" onclick="openLb('a',8)">
+            <img src="img/apt-a-09-detalle-mesa.jpg" alt="Detalle · Bienvenida" loading="lazy">
+            <span class="thumb-label">Detalle · Bienvenida</span>
           </div>
           </div>
         </div>
@@ -654,33 +702,37 @@ select.f-input option{{background:var(--forest);color:var(--cream)}}
         <div style="position:relative">
           <div class="apt-gallery" id="gallery-b">
           <div class="gallery-main" onclick="openLb('b',0)">
-            <img src="img/apt-b-01-vista-general.jpg" alt="Vista general" loading="lazy">
+            <img src="img/apt-b-01-habitacion-tv.jpg" alt="Habitación · Smart TV" loading="lazy">
             <div class="gallery-zoom-hint"><svg viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="1.5"/></svg></div>
           </div>
           <div class="gallery-thumbs">
           <div class="thumb" onclick="openLb('b',1)">
-            <img src="img/apt-b-02-salon-comedor.jpg" alt="Salón · Comedor" loading="lazy">
-            <span class="thumb-label">Salón · Comedor</span>
+            <img src="img/apt-b-02-habitacion-closet.jpg" alt="Habitación · Closet" loading="lazy">
+            <span class="thumb-label">Habitación · Closet</span>
           </div>
           <div class="thumb" onclick="openLb('b',2)">
-            <img src="img/apt-b-03-comedor-detalles.jpg" alt="Comedor · Detalles" loading="lazy">
-            <span class="thumb-label">Comedor · Detalles</span>
+            <img src="img/apt-b-03-habitacion-detalle.jpg" alt="Habitación · Detalle" loading="lazy">
+            <span class="thumb-label">Habitación · Detalle</span>
           </div>
           <div class="thumb" onclick="openLb('b',3)">
-            <img src="img/apt-b-04-cocina-equipada.jpg" alt="Cocina equipada" loading="lazy">
-            <span class="thumb-label">Cocina equipada</span>
+            <img src="img/apt-b-04-bano-completo.jpg" alt="Baño completo" loading="lazy">
+            <span class="thumb-label">Baño completo</span>
           </div>
           <div class="thumb" onclick="openLb('b',4)">
-            <img src="img/apt-b-05-cocina-marmol.jpg" alt="Cocina · Mármol" loading="lazy">
-            <span class="thumb-label">Cocina · Mármol</span>
+            <img src="img/apt-b-05-cocina-equipada.jpg" alt="Cocina equipada" loading="lazy">
+            <span class="thumb-label">Cocina equipada</span>
           </div>
           <div class="thumb" onclick="openLb('b',5)">
-            <img src="img/apt-b-06-habitacion-doble.jpg" alt="Habitación doble" loading="lazy">
-            <span class="thumb-label">Habitación doble</span>
+            <img src="img/apt-b-06-cocina-detalle.jpg" alt="Cocina · Detalle" loading="lazy">
+            <span class="thumb-label">Cocina · Detalle</span>
           </div>
           <div class="thumb" onclick="openLb('b',6)">
-            <img src="img/apt-b-07-habitacion-detalle.jpg" alt="Habitación · Detalle" loading="lazy">
-            <span class="thumb-label">Habitación · Detalle</span>
+            <img src="img/apt-b-07-comedor.jpg" alt="Comedor" loading="lazy">
+            <span class="thumb-label">Comedor</span>
+          </div>
+          <div class="thumb" onclick="openLb('b',7)">
+            <img src="img/apt-b-08-sala-estar.jpg" alt="Sala de estar" loading="lazy">
+            <span class="thumb-label">Sala de estar</span>
           </div>
           </div>
         </div>
@@ -710,29 +762,37 @@ select.f-input option{{background:var(--forest);color:var(--cream)}}
         <div style="position:relative">
           <div class="apt-gallery" id="gallery-c">
           <div class="gallery-main" onclick="openLb('c',0)">
-            <img src="img/apt-c-01-fachada-noche.jpg" alt="Fachada · Vista nocturna" loading="lazy">
+            <img src="img/apt-c-01-vista-general.jpg" alt="Vista general" loading="lazy">
             <div class="gallery-zoom-hint"><svg viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="1.5"/></svg></div>
           </div>
           <div class="gallery-thumbs">
           <div class="thumb" onclick="openLb('c',1)">
-            <img src="img/apt-c-02-salon-comedor.jpg" alt="Sala · Comedor" loading="lazy">
-            <span class="thumb-label">Sala · Comedor</span>
+            <img src="img/apt-c-02-comedor.jpg" alt="Comedor" loading="lazy">
+            <span class="thumb-label">Comedor</span>
           </div>
           <div class="thumb" onclick="openLb('c',2)">
-            <img src="img/apt-c-03-sofa-cama.jpg" alt="Sofá cama" loading="lazy">
-            <span class="thumb-label">Sofá cama</span>
+            <img src="img/apt-c-03-sala-tv.jpg" alt="Sala · Smart TV" loading="lazy">
+            <span class="thumb-label">Sala · Smart TV</span>
           </div>
           <div class="thumb" onclick="openLb('c',3)">
             <img src="img/apt-c-04-cocina.jpg" alt="Cocina equipada" loading="lazy">
             <span class="thumb-label">Cocina equipada</span>
           </div>
           <div class="thumb" onclick="openLb('c',4)">
-            <img src="img/apt-c-05-habitacion.jpg" alt="Habitación" loading="lazy">
-            <span class="thumb-label">Habitación</span>
+            <img src="img/apt-c-05-habitacion.jpg" alt="Habitación principal" loading="lazy">
+            <span class="thumb-label">Habitación principal</span>
           </div>
           <div class="thumb" onclick="openLb('c',5)">
-            <img src="img/apt-c-06-closet.jpg" alt="Closet amplio" loading="lazy">
-            <span class="thumb-label">Closet amplio</span>
+            <img src="img/apt-c-06-segunda-habitacion.jpg" alt="Segunda habitación" loading="lazy">
+            <span class="thumb-label">Segunda habitación</span>
+          </div>
+          <div class="thumb" onclick="openLb('c',6)">
+            <img src="img/apt-c-07-bano.jpg" alt="Baño" loading="lazy">
+            <span class="thumb-label">Baño</span>
+          </div>
+          <div class="thumb" onclick="openLb('c',7)">
+            <img src="img/apt-c-08-sala-comedor.jpg" alt="Sala · Comedor" loading="lazy">
+            <span class="thumb-label">Sala · Comedor</span>
           </div>
           </div>
           </div>
@@ -802,12 +862,14 @@ select.f-input option{{background:var(--forest);color:var(--cream)}}
           <div class="loc-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg><div><div class="loc-label">Check-in / Check-out</div><div class="loc-text"><span data-lang="es" class="active">Entrada: 15:00 h &middot; Salida: 11:00 h &middot; Acceso autónomo</span><span data-lang="en">Check-in: 3:00 PM &middot; Check-out: 11:00 AM &middot; Autonomous access</span></div></div></div>
           <div class="loc-item"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><div><div class="loc-label"><span data-lang="es" class="active">Entorno</span><span data-lang="en">Surroundings</span></div><div class="loc-text"><span data-lang="es" class="active">A escasos minutos de los principales centros comerciales y del terminal terrestre. Zona residencial privada, tranquila y segura.</span><span data-lang="en">Just minutes from main shopping centers and the bus terminal. Quiet, secure private residential area.</span></div></div></div>
         </div>
-        <a href="https://www.google.com/maps/dir//Amathea+Imperial+S.A.S,+Urbanizaci%C3%B3n+privada+El+sol,+Manzana+N,+070150+Machala,+Ecuador/@-3.2671332,-79.9228145,17z" target="_blank" rel="noopener" class="maps-btn" style="margin-top:1.6rem"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-lang="es" class="active">Cómo llegar — Google Maps</span><span data-lang="en">Get directions — Google Maps</span></a>
       </div>
       <div class="loc-right reveal">
-        <div class="video-wrap">
-          <video controls preload="metadata" playsinline><source src="como%20llegar%20a%20AmatheaImperial.mp4" type="video/mp4"></video>
-          <div class="video-bar"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg><span><span data-lang="es" class="active">Cómo llegar a Amathea Imperial</span><span data-lang="en">How to get to Amathea Imperial</span></span></div>
+        <div class="loc-map-frame">
+          <iframe src="https://www.google.com/maps?q=-3.2671332,-79.9228145&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación Amathea Imperial"></iframe>
+          <div class="loc-map-bar">
+            <div class="loc-map-bar-label"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span><span data-lang="es" class="active">Amathea Imperial · Machala, Ecuador</span><span data-lang="en">Amathea Imperial · Machala, Ecuador</span></span></div>
+            <a href="https://www.google.com/maps/dir//Amathea+Imperial+S.A.S,+Urbanizaci%C3%B3n+privada+El+sol,+Manzana+N,+070150+Machala,+Ecuador/@-3.2671332,-79.9228145,17z" target="_blank" rel="noopener" class="loc-map-open"><span data-lang="es" class="active">Abrir en Google Maps ↗</span><span data-lang="en">Open in Google Maps ↗</span></a>
+          </div>
         </div>
       </div>
     </div>
@@ -1019,14 +1081,18 @@ select.f-input option{{background:var(--forest);color:var(--cream)}}
   </div>
   <div class="entorno-carousel" id="entornoCarousel">
     <div class="ec-track" id="ecTrack">
-      <div class="ec-slide"><img src="img/entorno-01.jpg" alt="Fachada Amathea Imperial" loading="lazy"><div class="ec-caption"><span data-lang="es" class="active">Fachada · Amathea Imperial</span><span data-lang="en">Facade · Amathea Imperial</span></div></div>
-      <div class="ec-slide"><img src="img/entorno-02.jpg" alt="Acceso Urbanización El Sol" loading="lazy"><div class="ec-caption"><span data-lang="es" class="active">Acceso controlado · Urbanización El Sol</span><span data-lang="en">Gated access · El Sol Estate</span></div></div>
-      <div class="ec-slide"><img src="img/entorno-03.jpg" alt="Lavadora Secadora" loading="lazy"><div class="ec-caption"><span data-lang="es" class="active">Lavadora · Secadora integrada</span><span data-lang="en">Integrated Washer · Dryer</span></div></div>
+      <div class="ec-slide"><img src="img/entorno-01-fachada-noche.jpg" alt="Fachada iluminada · Amathea Imperial" loading="lazy"><div class="ec-caption"><span data-lang="es" class="active">Fachada iluminada · Amathea Imperial</span><span data-lang="en">Illuminated facade · Amathea Imperial</span></div></div>
+      <div class="ec-slide"><img src="img/entorno-02-fachada-noche.jpg" alt="Fachada · Detalle nocturno" loading="lazy"><div class="ec-caption"><span data-lang="es" class="active">Detalle · Iluminación nocturna</span><span data-lang="en">Detail · Night lighting</span></div></div>
+      <div class="ec-slide"><img src="img/entorno-03-fachada-dia.jpg" alt="Fachada completa" loading="lazy"><div class="ec-caption"><span data-lang="es" class="active">Fachada · Amathea Imperial</span><span data-lang="en">Facade · Amathea Imperial</span></div></div>
+      <div class="ec-slide"><img src="img/entorno-04-acceso-privado.jpg" alt="Acceso privado" loading="lazy"><div class="ec-caption"><span data-lang="es" class="active">Acceso privado · Urbanización El Sol</span><span data-lang="en">Private access · El Sol Estate</span></div></div>
+      <div class="ec-slide"><img src="img/entorno-05-hall-entrada.jpg" alt="Hall de entrada" loading="lazy"><div class="ec-caption"><span data-lang="es" class="active">Hall de entrada</span><span data-lang="en">Entrance hall</span></div></div>
+      <div class="ec-slide"><img src="img/entorno-06-escalera.jpg" alt="Escalera interior" loading="lazy"><div class="ec-caption"><span data-lang="es" class="active">Escalera · Zonas comunes</span><span data-lang="en">Staircase · Common areas</span></div></div>
+      <div class="ec-slide"><img src="img/entorno-07-pasillo-interior.jpg" alt="Pasillo interior" loading="lazy"><div class="ec-caption"><span data-lang="es" class="active">Pasillo interior</span><span data-lang="en">Interior hallway</span></div></div>
     </div>
     <button class="ec-btn ec-prev" id="ecPrev">&#8249;</button>
     <button class="ec-btn ec-next" id="ecNext">&#8250;</button>
     <div class="ec-dots" id="ecDots">
-      <span class="ec-dot active"></span><span class="ec-dot"></span><span class="ec-dot"></span>
+      <span class="ec-dot active"></span><span class="ec-dot"></span><span class="ec-dot"></span><span class="ec-dot"></span><span class="ec-dot"></span><span class="ec-dot"></span><span class="ec-dot"></span>
     </div>
   </div>
 </section>
@@ -1078,9 +1144,9 @@ document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click
 
 // LIGHTBOX
 const lbData = {};
-lbData['a'] = [{src:"img/apt-a-01-salon-comedor.jpg",label:"Salón · Comedor"},{src:"img/apt-a-02-vista-general.jpg",label:"Vista general"},{src:"img/apt-a-03-cocina-equipada.jpg",label:"Cocina equipada"},{src:"img/apt-a-04-cocina-vista-completa.jpg",label:"Cocina · Vista completa"},{src:"img/apt-a-05-encimera-marmol-negro.jpg",label:"Encimera · Mármol negro"},{src:"img/apt-a-06-suite-matrimonial.jpg",label:"Suite matrimonial"},{src:"img/apt-a-07-suite-luz-natural.jpg",label:"Suite · Luz natural"},{src:"img/apt-a-08-suite-vista-completa.jpg",label:"Suite · Vista completa"},{src:"img/apt-a-09-bano-privado-suite.jpg",label:"Baño privado suite"},{src:"img/apt-a-10-segunda-habitacion.jpg",label:"Segunda habitación"},{src:"img/apt-a-11-segunda-habitacion-vista.jpg",label:"Segunda habitación · Vista"},{src:"img/apt-a-12-bano-segunda-habitacion.jpg",label:"Baño segunda habitación"},{src:"img/apt-a-13-bano-ducha-marmol.jpg",label:"Baño · Ducha de mármol"}];
-lbData['b'] = [{src:"img/apt-b-01-vista-general.jpg",label:"Vista general"},{src:"img/apt-b-02-salon-comedor.jpg",label:"Salón · Comedor"},{src:"img/apt-b-03-comedor-detalles.jpg",label:"Comedor · Detalles"},{src:"img/apt-b-04-cocina-equipada.jpg",label:"Cocina equipada"},{src:"img/apt-b-05-cocina-marmol.jpg",label:"Cocina · Mármol"},{src:"img/apt-b-06-habitacion-doble.jpg",label:"Habitación doble"},{src:"img/apt-b-07-habitacion-detalle.jpg",label:"Habitación · Detalle"},{src:"img/apt-b-08-bano-completo.jpg",label:"Baño completo"},{src:"img/apt-b-09-habitacion-closet-bano.jpg",label:"Habitación · Closet y baño"}];
-lbData['c'] = [{src:"img/apt-c-01-fachada-noche.jpg",label:"Fachada · Vista nocturna"},{src:"img/apt-c-02-salon-comedor.jpg",label:"Sala · Comedor"},{src:"img/apt-c-03-sofa-cama.jpg",label:"Sofá cama"},{src:"img/apt-c-04-cocina.jpg",label:"Cocina equipada"},{src:"img/apt-c-05-habitacion.jpg",label:"Habitación"},{src:"img/apt-c-06-closet.jpg",label:"Closet amplio"}];
+lbData['a'] = [{src:"img/apt-a-01-entrada-pasillo.jpg",label:"Entrada · Acceso privado"},{src:"img/apt-a-02-comedor.jpg",label:"Comedor"},{src:"img/apt-a-03-sala-estar.jpg",label:"Sala de estar"},{src:"img/apt-a-04-cocina-equipada.jpg",label:"Cocina equipada"},{src:"img/apt-a-05-segunda-habitacion.jpg",label:"Segunda habitación"},{src:"img/apt-a-06-suite-matrimonial.jpg",label:"Suite matrimonial"},{src:"img/apt-a-07-bano-privado.jpg",label:"Baño privado"},{src:"img/apt-a-08-pasillo-espejos.jpg",label:"Pasillo interior"},{src:"img/apt-a-09-detalle-mesa.jpg",label:"Detalle · Bienvenida"}];
+lbData['b'] = [{src:"img/apt-b-01-habitacion-tv.jpg",label:"Habitación · Smart TV"},{src:"img/apt-b-02-habitacion-closet.jpg",label:"Habitación · Closet"},{src:"img/apt-b-03-habitacion-detalle.jpg",label:"Habitación · Detalle"},{src:"img/apt-b-04-bano-completo.jpg",label:"Baño completo"},{src:"img/apt-b-05-cocina-equipada.jpg",label:"Cocina equipada"},{src:"img/apt-b-06-cocina-detalle.jpg",label:"Cocina · Detalle"},{src:"img/apt-b-07-comedor.jpg",label:"Comedor"},{src:"img/apt-b-08-sala-estar.jpg",label:"Sala de estar"}];
+lbData['c'] = [{src:"img/apt-c-01-vista-general.jpg",label:"Vista general"},{src:"img/apt-c-02-comedor.jpg",label:"Comedor"},{src:"img/apt-c-03-sala-tv.jpg",label:"Sala · Smart TV"},{src:"img/apt-c-04-cocina.jpg",label:"Cocina equipada"},{src:"img/apt-c-05-habitacion.jpg",label:"Habitación principal"},{src:"img/apt-c-06-segunda-habitacion.jpg",label:"Segunda habitación"},{src:"img/apt-c-07-bano.jpg",label:"Baño"},{src:"img/apt-c-08-sala-comedor.jpg",label:"Sala · Comedor"}];
 let lbApt = 'a', lbIdx = 0;
 function openLb(apt, idx) {
   if (!lbData[apt] || !lbData[apt].length) return;
@@ -1106,7 +1172,7 @@ document.addEventListener('keydown', e => {
 (function(){
   const track = document.getElementById('ecTrack');
   const dots = document.querySelectorAll('.ec-dot');
-  const total = 3;
+  const total = 7;
   let current = 0, timer;
   function goTo(idx) {
     current = (idx+total)%total;
