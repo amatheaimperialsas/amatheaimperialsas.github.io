@@ -1,6 +1,6 @@
 /* Amathea Imperial — Chatbot v3.7 | val.town proxy */
 (function(){
-const P='https://amatheaimperialsas--773e66fc5e0411f1b7501607ee4eb77e.web.val.run';
+const P='https://amathea-chatbot-proxy.amatheaimperialsas.workers.dev/';
 const K='e8cb674871c6882b41bd5708f69621e89ffaaf92';
 const W={es:'¡Bienvenido a **Amathea Imperial** 🏡\n\nApartamentos de lujo en **Machala, Ecuador**\n⭐ 5.0 Airbnb · 9.2 Booking\n\n¿En qué puedo ayudarte?',en:'Welcome to **Amathea Imperial** 🏡\n\nLuxury apartments in **Machala, Ecuador**\n⭐ 5.0 Airbnb · 9.2 Booking\n\nHow can I help you?'};
 const QR={es:['💰 Precios','📅 Disponibilidad','🏠 Apartamentos','🚗 Transporte','🍽️ Comida','🏦 Pago directo'],en:['💰 Prices','📅 Availability','🏠 Apartments','🚗 Transport','🍽️ Food','🏦 Direct payment']};
